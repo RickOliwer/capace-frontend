@@ -5,8 +5,9 @@ import { GET_MENUS } from '../src/queries/get-menus';
 
 
 
-export default function Home({ menus }) {
-  console.warn('menus', menus.headerMenus[2].node)
+
+export default function Home({ data }) {
+  console.log("my data", data);
   return (
     <h1 className="text-3xl font-bold underline">
       
@@ -19,11 +20,17 @@ export async function getStaticProps(context){
   const { data, loading, networkStatus } = await Client.query({
     query: GET_MENUS
   })
-
   return {
     props: {
-      menus: {
-        headerMenus: data?.headerMenus?.edges,
+      data: {
+        header: data?.header || [],
+
+        menus: {
+          headerMenus: data?.headerMenus?.edges || [],
+          footerMenus: data?.footerMenus?.edges || [],
+        },
+
+        footer: data?.footer || [],
       }
     }
   }
