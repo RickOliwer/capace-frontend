@@ -8,10 +8,25 @@ import { GET_MENUS } from '../src/queries/get-menus';
 
 
 export default function Home({ data }) {
-  console.log("my data", data);
+
   return (
     <Layout key="layout" data={data}>
-      Hello world
+      <div className=' w-96'>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias laudantium modi cupiditate amet repudiandae? Perspiciatis voluptas asperiores exercitationem a minus omnis autem accusantium beatae, corporis, possimus repudiandae delectus iusto voluptatum!</p>
+      </div>
     </Layout>
   )
 }

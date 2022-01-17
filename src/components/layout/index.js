@@ -6,9 +6,9 @@ const Layout = ({children, data}) => {
     
     return ( 
         <>
-            <head>
+            {/* <head>
                 <link rel="shortcut icon" href={ data?.header?.favicon } />
-            </head>
+            </head> */}
             <Header header={data?.header} headerMenus={data?.menus?.headerMenus} />
             {children}
             <Footer footer={data?.footer} footerMenus={data?.menus?.footerMenus}/>
