@@ -48,6 +48,7 @@ export async function getStaticProps(context){
 
         footer: data?.footer || [],
       }
-    }
+    },
+    revalidate: 1,
   }
 }

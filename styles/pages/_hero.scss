@@ -1,0 +1,13 @@
+.hero{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+        .overlay{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba($color: $black, $alpha: 0.5);
+        }
+}

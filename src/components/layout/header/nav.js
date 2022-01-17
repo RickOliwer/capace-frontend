@@ -58,7 +58,7 @@ const Nav = ({ header, headerMenus }) => {
  
                 </div>
 
-                <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'click' : '' } nav_button mr-6 md:mr-10 lg:mr-28 my-auto`} id="nav_button">
+                <div onClick={() => {setIsOpen(!isOpen); setDropped(!isDropped);}} className={`${isOpen ? 'click' : '' } nav_button mr-6 md:mr-10 lg:mr-28 my-auto`} id="nav_button">
                     <span className="line"></span>
                     <span className="line"></span>
                     <span className="line"></span>
@@ -75,18 +75,18 @@ const Nav = ({ header, headerMenus }) => {
                                 isEmpty(menu?.node?.childItems?.edges) 
                                 ? 
                                     <Link key={menu?.node?.id} href={menu?.node?.path}>
-                                        <a>{menu?.node?.label}</a>
+                                        <a className='text-2xl' onClick={() => setIsOpen(!isOpen)}>{menu?.node?.label}</a>
                                     </Link>
                                 : 
                                     // <Link key={menu?.node?.id} href={menu?.node?.path}>
                                     //     <a className=''>{menu?.node?.label}</a>
                                     // </Link>
                                     <div key={menu?.node?.id} className='child_link'>
-                                        <div onClick={() => setDropped(!isDropped)} className={`${isDropped ? 'services' : '' } cursor-pointer`}>{menu?.node?.label}</div>
+                                        <div onClick={() => setDropped(!isDropped)} className={`${isDropped ? 'services' : '' } text-2xl cursor-pointer`}>{menu?.node?.label}</div>
                                         <div  className={`${isDropped ? 'show' : '' } child_items`}>
                                             {menu?.node?.childItems?.edges.map( child => (
                                                 <li key={child.node.id} ref={(e) => createLinksRefs(e, child.node.order)}>
-                                                    <Link href={child?.node.path}><a>{child?.node.label}</a></Link>
+                                                    <Link href={child?.node.path}><a onClick={() => setIsOpen(!isOpen)} className="text-base">{child?.node.label}</a></Link>
                                                 </li>
                                             ))}
                                             

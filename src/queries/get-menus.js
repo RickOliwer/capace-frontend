@@ -1,7 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const GET_MENUS = gql`
-query MyQuery {
+export const HeaderFooter = `
     header: getHeader {
       favicon
       siteLogoUrl
@@ -58,5 +57,9 @@ query MyQuery {
         iconUrl
       }
     }
-  }
+`
+export const GET_MENUS = gql`
+query GET_MENUS {
+  ${HeaderFooter}
+}
 `
