@@ -14,7 +14,7 @@ const AboutIntro = ({intro}) => {
                     }
                 </h2>
             </section>
-            <section className="col-span-3">
+            <section className="col-span-3 grid gap-4">
                 <div>
                     {
                         intro?.aboutIntro?.map((text) => {
@@ -25,16 +25,19 @@ const AboutIntro = ({intro}) => {
                         })
                     }
                 </div>
-                <div>
+                <div className="grid grid-cols-2 gap-4">
                     {
                         intro?.aboutIntro?.map((intro) => {
-                            
-                            intro?.subHeading?.map((sub) => {
+                            return intro?.subHeading?.map((sub) => {
                                 
-                                sub?.section?.map((item) =>{
-                                    console.log('heading', item?.heading);
-                                    console.log('text', item?.text);
+                                return sub?.section?.map((item, index) => {
+                                    
+                                    return <div key={`${index}subHeading`}>
+                                        <h3>{item?.heading}</h3>
+                                        <p>{item?.text}</p>
+                                    </div>
                                 })
+
                             })
                         })
                     }
