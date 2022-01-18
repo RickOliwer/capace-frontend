@@ -15,22 +15,24 @@ export const AboutPage =`
             heading
             excerpt
             team {
-            ... on GQLEmployee {
+              ... on GQLEmployee {
                 id
+                uri
+                slug
                 GQL_employeesContent {
-                employeeIntro {
-                    image {
-                    mediaItemUrl
-                    altText
-                    }
+                  employeeIntro {
                     role
                     namn
                     email
+                    image {
+                      altText
+                      mediaItemUrl
+                    }
+                  }
                 }
-                }
+              }
             }
-            }
-        }
+          }
         aboutCareer {
             heading
             excerpt
