@@ -4,21 +4,11 @@ export const AboutPage =`
             headingOne
             excerpt
             text
-            headingTwo {
+            subHeading {
+                section {
                 heading
                 text
-            }
-            headingThree {
-                heading
-                text
-            }
-            headingFour {
-                heading
-                text
-            }
-            headingFive {
-                heading
-                text
+                }
             }
         }
         aboutTeam {

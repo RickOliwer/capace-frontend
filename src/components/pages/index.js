@@ -4,7 +4,7 @@ const Pages = ({template}) => {
 
     return ( 
         
-        <main>
+        <main className="my-6 mx-6 md:mx-10 lg:mx-28 md:my-10 lg:my-28">
 
             {template?.pageTemplate == 'About' ? (
                 <About about={template}/>
