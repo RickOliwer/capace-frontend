@@ -5,10 +5,6 @@ import { isEmpty } from 'lodash';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'
 const Nav = ({ header, headerMenus }) => {
-    console.log('my header', headerMenus);
-    if ( isEmpty( headerMenus ) ){
-        return null;
-    }
 
     const [isOpen, setIsOpen] = useState(false)
     const [ isMenuScroll, setMenuScroll ] = useState(false)
@@ -45,6 +41,9 @@ const Nav = ({ header, headerMenus }) => {
     }, [isDropped])
 
 
+    if ( isEmpty( headerMenus ) ){
+        return null;
+    }
     return ( 
         <nav className="fixed z-40 w-full">
             <div className={`${ isMenuScroll ? 'bg-stone-900 h-28' : 'h-52'}relative inset-x-0 flex justify-between w-full h-28 transition duration-1000 ease-in-out`}>

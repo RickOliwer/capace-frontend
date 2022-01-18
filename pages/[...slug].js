@@ -9,14 +9,13 @@ import Image from 'next/image'
 
 const Pages = ({ data }) => {
     const router = useRouter()
-    console.log('my about', data?.page?.pageContent);
 
     if( router.isFallback){
         return <div>Loading...</div>
     }
     const hasImg = data?.page?.featuredImage && data?.page?.featuredImage?.node?.mediaItemUrl ? true : false
     return (
-        <Layout key="layout" data={data}>
+        <Layout data={data}>
             <div className="hero">
 
                 {hasImg && 
@@ -77,7 +76,6 @@ export async function getStaticProps( {params} ) {
 		},
 	} );
 
-
 	return {
 		props: {
 			data: {
@@ -110,7 +108,11 @@ export async function getStaticPaths() {
     data?.pages?.nodes && data?.pages?.nodes.map( page => {
         if(! isEmpty( page?.uri ) ) {
             const slugs = page?.uri?.split('/').filter( pageSlug => pageSlug );
-            pathsData.push( {params: { slug: slugs }} )
+            
+            if(slugs.length > 0){
+                pathsData.push( {params: { slug: slugs }} )
+                console.log("my slug", slugs);
+            }
         }
     })
 
