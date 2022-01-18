@@ -34,6 +34,12 @@ p, span{
     }
 }
 
+.team-card{
+    &:nth-child(odd){
+        margin-top: 50px;
+    }
+}
+
 $black: #2e2e2e;
 @import 'layout/nav';
 @import 'pages/hero';
