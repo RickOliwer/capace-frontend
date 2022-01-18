@@ -4,6 +4,7 @@ import head from 'next/head';
 import Seo from "../seo";
 import { isEmpty } from "lodash";
 import { sanitize } from "../../utils/miscellaneous";
+import Head from "next/head";
 
 const Layout = ({children, data}) => {
 
@@ -11,12 +12,12 @@ const Layout = ({children, data}) => {
         return null
     }
 
-    const {page, header, footer, menus} = data || {};
+    const {page, header, footer, headerMenus, footerMenus} = data || {};
     
     return ( 
         <div>
             <Seo seo={page?.seo} uri={page?.uri} />
-            <head>
+            <Head>
                 <link rel="shortcut icon" href={ header?.favicon } />
                 {page?.seo?.schemaDetails && (
                     <script 
@@ -27,10 +28,11 @@ const Layout = ({children, data}) => {
 
                     />
                 )}
-            </head>
-            <Header header={header} headerMenus={menus?.headerMenus} />
+            </Head>
+
+            <Header header={header} headerMenus={headerMenus?.edges} page={page}/>
             {children}
-            <Footer footer={footer} footerMenus={menus?.footerMenus}/>
+            <Footer footer={footer} footerMenus={footerMenus?.edges}/>
         </div>
      );
 }
