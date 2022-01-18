@@ -44,18 +44,27 @@ const Nav = ({ header, headerMenus }) => {
     if ( isEmpty( headerMenus ) ){
         return null;
     }
+
+    const hasImg = header?.siteLogoUrl ? true : false
     return ( 
         <nav className="fixed z-40 w-full">
             <div className={`${ isMenuScroll ? 'bg-stone-900 h-28' : 'h-52'}relative inset-x-0 flex justify-between w-full h-28 transition duration-1000 ease-in-out`}>
 
-                <div className={`${ isMenuScroll ? '' : ''} z-50 my-6 ml-6 md:ml-10 lg:ml-28`}>
-                    {/* Site Logo */}
-
-                    <Link href="/">
-                        <img src={header?.siteLogoUrl} alt="" className="h-full cursor-pointer"/> 
-                    </Link>
+                {/* Site Logo */}
+                <Link href="/" passHref={true}>
+                    <div
+                        className='relative h-16 w-16 z-50 my-6 ml-6 md:ml-10 lg:ml-28 cursor-pointer'
+                    >
+                        <Image 
+                            layout='fill'
+                            alt='logo'
+                            src={header?.siteLogoUrl}
+                            priority
+                        />
+                    </div>
+                </Link>
  
-                </div>
+      
 
                 <div onClick={() => {setIsOpen(!isOpen); setDropped(!isDropped);}} className={`${isOpen ? 'click' : '' } nav_button mr-6 md:mr-10 lg:mr-28 my-auto`} id="nav_button">
                     <span className="line"></span>

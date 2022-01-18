@@ -24,6 +24,7 @@ export const GET_PAGE = gql`
         featuredImage {
             node {
               mediaItemUrl
+			  altText
             }
         }
 	  }

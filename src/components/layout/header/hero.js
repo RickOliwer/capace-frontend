@@ -14,6 +14,7 @@ const Hero = ({ hero }) => {
                 <Image 
                 layout="fill" 
                 objectFit="cover" 
+                alt={hero?.featuredImage?.node?.altText}
                 src={hero?.featuredImage?.node?.mediaItemUrl} 
                 priority />
             </div>

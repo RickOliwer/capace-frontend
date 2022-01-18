@@ -21,6 +21,7 @@ export const AboutPage =`
                 employeeIntro {
                     image {
                     mediaItemUrl
+                    altText
                     }
                     role
                     namn
@@ -40,6 +41,7 @@ export const AboutPage =`
                 node {
                     mediaItemUrl
                     title
+                    altText
                 }
                 }
             }
