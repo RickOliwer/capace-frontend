@@ -22,6 +22,7 @@ const AboutTeam = ({ team }) => {
                                                 <Image 
                                                     layout="fill"
                                                     objectFit='cover'
+                                                    alt={`picture of ${emp?.namn}`}
                                                     src={emp?.image?.mediaItemUrl}
                                                 />
                                             </div>
