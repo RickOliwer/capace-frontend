@@ -2,7 +2,7 @@ import Header from "./header";
 import Footer from "./footer";
 import head from 'next/head';
 import Seo from "../seo";
-import { isEmpty } from "lodash";
+import isEmpty from "lodash.isempty"
 import { sanitize } from "../../utils/miscellaneous";
 import Head from "next/head";
 

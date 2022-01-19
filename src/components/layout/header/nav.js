@@ -1,7 +1,7 @@
 
 import 'tailwindcss/tailwind.css'
 import Link from 'next/link'
-import { isEmpty } from 'lodash';
+import isEmpty from "lodash.isempty"
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image'
 const Nav = ({ header, headerMenus }) => {
@@ -48,12 +48,12 @@ const Nav = ({ header, headerMenus }) => {
     const hasImg = header?.siteLogoUrl ? true : false
     return ( 
         <nav className="fixed z-40 w-full">
-            <div className={`${ isMenuScroll ? 'bg-stone-900 h-28' : 'h-52'}relative inset-x-0 flex justify-between w-full h-28 transition duration-1000 ease-in-out`}>
+            <div className={`${ isMenuScroll ? 'bg-capace h-28' : 'h-52'}relative inset-x-0 flex justify-between w-full h-28 transition duration-1000 ease-in-out`}>
 
                 {/* Site Logo */}
-                <Link href="/" passHref={true}>
-                    <div
-                        className='relative h-16 w-16 z-50 my-6 ml-6 md:ml-10 lg:ml-28 cursor-pointer'
+                <Link href="/">
+                    <a
+                        className={`relative block h-16 w-16 z-50 my-6 ml-6 md:ml-10 lg:ml-28 cursor-pointer`}
                     >
                         <Image 
                             layout='fill'
@@ -61,7 +61,7 @@ const Nav = ({ header, headerMenus }) => {
                             src={header?.siteLogoUrl}
                             priority
                         />
-                    </div>
+                    </a>
                 </Link>
  
       
@@ -76,7 +76,7 @@ const Nav = ({ header, headerMenus }) => {
 
 
                 {headerMenus?.length ? (
-                    <div className={`${isOpen ? 'items_active' : '' } link_items bg-stone-900`}>
+                    <div className={`${isOpen ? 'items_active' : '' } link_items bg-capace`}>
                         <div className="item-position">
                             {headerMenus?.map( menu => (
                             

@@ -1,4 +1,4 @@
-import { isEmpty } from "lodash"
+import isEmpty from "lodash.isempty"
 
 export const FALLBACK = 'blocking'
 export const PAGES_COUNT = 10

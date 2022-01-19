@@ -2,8 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 
+body{
+    overflow-x: hidden;
+}
+
 .capace-oranges{
     color: #FF752E;
+}
+
+.bg-capace{
+    background-color: #191919 !important;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -20,26 +28,27 @@ p, span{
     
     div{
         line-height: .6;
-        &:nth-child(1){
-            margin-bottom: .4em;
-        }
-        &:nth-child(2){
-            margin-bottom: .45em;
-        }
-        &:nth-child(3){
-            font-family: 'Caveat', cursive ;
-            color: #FF752E ;
-            font-size: 4.375rem;
-        }
+            &:nth-child(1){
+                margin-bottom: .4em;
+            }
+            &:nth-child(2){
+                margin-bottom: .45em;
+            }
+            &:nth-child(3){
+                font-family: 'Caveat', cursive ;
+                color: #FF752E ;
+                font-size: 4.375rem;
+            }
     }
 }
 
 .team-card{
     &:nth-child(odd){
-        margin-top: 50px;
+        margin-top: 80px;
     }
 }
 
 $black: #2e2e2e;
+$oranges: #FF752E;
 @import 'layout/nav';
 @import 'pages/hero';

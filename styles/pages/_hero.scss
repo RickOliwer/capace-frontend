@@ -9,5 +9,25 @@
             top: 0;
             left: 0;
             background: rgba($color: $black, $alpha: 0.5);
+
+                .start-heading{
+
+                        .start-heading1{
+                            font-size: 400px !important;
+                        }
+
+                        .start-heading2{
+                            font-size: 110px !important;
+
+                                .type-writer{
+                                    color: $oranges;
+                                    margin-left: 25px;
+                                        span{
+                                            font-family: 'Caveat', cursive !important;
+                                            font-size: 170px;
+                                        }
+                                }
+                        }
+                }
         }
 }
