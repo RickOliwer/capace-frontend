@@ -7,10 +7,10 @@ const About = ({ about }) => {
     
     return ( 
         <div>
-            <AboutIntro intro={about} />
-            <AboutTeam team={about} />
-            <AboutCareer career={about} />
-            <AboutReview review={about} />
+            <AboutIntro intro={about?.aboutIntro} />
+            <AboutTeam team={about?.aboutTeam} />
+            <AboutCareer career={about?.aboutCareer} />
+            <AboutReview review={about?.aboutCustomerReview} />
         </div>
     );
 }

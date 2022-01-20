@@ -1,5 +1,5 @@
 const AboutIntro = ({intro}) => {
-    let headingTwo = intro?.aboutIntro[0].headingOne
+    let headingTwo = intro[0].headingOne
     const newHeadingTwo = headingTwo.split(' ')
 
     return ( 
@@ -17,7 +17,7 @@ const AboutIntro = ({intro}) => {
             <section className="lg:col-span-3 grid gap-10">
                 <div>
                     {
-                        intro?.aboutIntro?.map((text, index) => {
+                        intro?.map((text, index) => {
                             return <div className='text-lg' key={`${index}aboutIntroExcerpt`}>
                                 <p className="mb-4 font-medium">{text?.excerpt}</p>
                                 <p className='font-light'>{text?.text}</p>
@@ -27,7 +27,7 @@ const AboutIntro = ({intro}) => {
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                     {
-                        intro?.aboutIntro?.map((intro) => {
+                        intro?.map((intro) => {
                             return intro?.subHeading?.map((sub) => {
                                 
                                 return sub?.section?.map((item, index) => {

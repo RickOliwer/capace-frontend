@@ -6,12 +6,12 @@ const AboutCareer = ({ career }) => {
     return ( 
         <div className="my-6 md:my-10 lg:my-28">
             <section className="lg:text-7xl text-5xl">
-                <h2>{career?.aboutCareer[0]?.heading}<span className="capace-oranges">.</span></h2>
-                <p className="text-lg">{career?.aboutCareer[0]?.excerpt}</p>
+                <h2>{career[0]?.heading}<span className="capace-oranges">.</span></h2>
+                <p className="text-lg">{career[0]?.excerpt}</p>
             </section>
             <section className="lg:grid lg:grid-cols-3 gap-10 mt-10">
                 {
-                    career?.aboutCareer?.map((job) => {
+                    career?.map((job) => {
 
                         return job?.jobs?.map((post) => {
 

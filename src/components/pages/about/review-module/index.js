@@ -4,11 +4,11 @@ const AboutReview = ({review}) => {
     return (
         <div className="my-6 md:my-10 lg:my-28">
             <section className="">
-                <h2 className="lg:text-7xl text-5xl">{review?.aboutCustomerReview[0]?.heading}<span className="capace-oranges">.</span></h2>
+                <h2 className="lg:text-7xl text-5xl">{review[0]?.heading}<span className="capace-oranges">.</span></h2>
             </section>
             <section className="grid gap-10 lg:grid-cols-2 text-lg">
                 {
-                    review?.aboutCustomerReview?.map((rev) => {
+                    review?.map((rev) => {
                         return rev?.reviews.map((r) => {
                             return <div className="" key={r.heading}>
                                         <h3 className='text-2xl'>{r?.heading}</h3>
