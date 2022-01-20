@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import Link from 'next/link';
 const AboutTeam = ({ team }) => {
     
     return ( 
-        <div>
-            <div>
+        <div className="my-6 md:my-10 lg:my-28">
+            <div className="lg:text-7xl text-5xl">
                 <h2>{team.aboutTeam[0].heading} <span className="capace-oranges">.</span></h2>
             </div>
             <div className='lg:grid lg:grid-cols-2 gap-10'>
@@ -14,7 +13,7 @@ const AboutTeam = ({ team }) => {
                             
                             return post?.GQL_employeesContent?.employeeIntro?.map((emp) => { 
                                 return <div className='team-card' key={post?.id}>
-                                            <div className="relative h-screen">
+                                            <div className="mb-6 relative h-screen">
                                                 <Image 
                                                     layout="fill"
                                                     objectFit='cover'
@@ -24,9 +23,9 @@ const AboutTeam = ({ team }) => {
                                             </div>
                                             
                                             <div>
-                                                <p className='capace-oranges'>{emp?.role}</p>
-                                                <p>{emp?.namn} <span className='capace-oranges'>.</span></p>
-                                                <p className='capace-oranges'>{emp?.email}</p>
+                                                <p className='capace-oranges mb-3 text-lg'>{emp?.role}</p>
+                                                <p className="text-3xl font-bold mb-3">{emp?.namn} <span className='capace-oranges'>.</span></p>
+                                                <p className='text-lg capace-oranges'>{emp?.email}</p>
                                             </div>
                                        </div>
                                 
