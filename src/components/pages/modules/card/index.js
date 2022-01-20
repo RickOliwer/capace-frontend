@@ -2,10 +2,10 @@ import isEmpty from "lodash.isempty";
 import Image from "next/image";
 import Link from "next/link"
 
-const Card = ({link, id, imgAlt, imgSrc, first, second, third}) => {
+const Card = ({link, imgAlt, imgSrc, first, second, third}) => {
     return ( 
         
-        <div className='team-card' key={id}>
+        <div className='team-card'>
             {
                 isEmpty(link) ? (
                     <>

@@ -2,6 +2,7 @@ import { gql } from "@apollo/client";
 import {HeaderFooter} from "../get-menus";
 import { AboutPage } from "./get-about";
 import SeoFragment from "../fragments/seo";
+import { CasePage } from "./get-casepage";
 
 
 export const GET_PAGE = gql`
@@ -19,6 +20,7 @@ export const GET_PAGE = gql`
 		pageContent {
 			pageTemplate
 			${AboutPage}
+			${CasePage}
 		}
 		
         featuredImage {

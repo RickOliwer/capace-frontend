@@ -13,7 +13,7 @@ const AboutTeam = ({ team }) => {
                             
                             return post?.GQL_employeesContent?.employeeIntro?.map((emp) => { 
                                 return <Card 
-                                            id={post?.id} 
+                                            key={post?.id}
                                             imgAlt={`picture of ${emp?.namn}`} 
                                             imgSrc={emp?.image?.mediaItemUrl} f
                                             first={emp?.role} 

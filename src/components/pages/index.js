@@ -1,3 +1,4 @@
+import CasePage from "./case";
 import About from "./about";
 
 const Pages = ({template}) => {
@@ -15,7 +16,7 @@ const Pages = ({template}) => {
             ) : null}
 
             {template?.pageTemplate == 'Case' ? (
-                <h1>hello case</h1>
+                <CasePage casePage={template} />
             ) : null}
 
             {template?.pageTemplate == 'Contact' ? (
