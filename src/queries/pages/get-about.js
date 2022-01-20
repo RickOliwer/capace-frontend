@@ -39,12 +39,15 @@ export const AboutPage =`
             jobs {
             ... on GQLCareer {
                 id
+                title
+                uri
+                slug
                 featuredImage {
-                node {
-                    mediaItemUrl
-                    title
-                    altText
-                }
+                  node {
+                      mediaItemUrl
+                      title
+                      altText
+                  }
                 }
             }
             }
