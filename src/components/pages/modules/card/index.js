@@ -15,6 +15,7 @@ const Card = ({link, imgAlt, imgSrc, first, second, third}) => {
                             objectFit='cover'
                             alt={imgAlt}
                             src={imgSrc}
+                            priority
                         />
                     </div>
                     
@@ -40,6 +41,7 @@ const Card = ({link, imgAlt, imgSrc, first, second, third}) => {
                                         objectFit='cover'
                                         alt={imgAlt}
                                         src={imgSrc}
+                                        priority
                                     />
                                 </div>
                                 

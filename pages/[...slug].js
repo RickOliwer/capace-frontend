@@ -4,14 +4,14 @@ import Client from "../src/apollo/client";
 import Layout from "../src/components/layout";
 import { GET_PAGE } from "../src/queries/pages/get-page";
 import { GET_PAGES_URI } from "../src/queries/pages/get-pages";
-
 import { FALLBACK, isCustomPageUri } from "../src/utils/slugs";
 import { handleRedirectsAndReturnData } from '../src/utils/slugs';
 import Pages from "../src/components/pages";
 import Hero from "../src/components/layout/header/hero";
+import { GET_TAX } from "../src/queries/categories";
 
 
-const Page = ({ data }) => {
+const Page = ({ data, response }) => {
     const router = useRouter()
 
     if( router.isFallback){
@@ -22,7 +22,7 @@ const Page = ({ data }) => {
         <Layout data={data}>
             <Hero hero={data?.page} />
 
-            <Pages template={data?.page?.pageContent}/>
+            <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges}/>
 
             
 
@@ -40,9 +40,14 @@ export async function getStaticProps( {params} ) {
 		},
 	} );
 
+    const response = await Client.query({
+        query: GET_TAX
+    })
+
 	const defaultProps = {
 		props: {
 			data: data || {},
+            response: response,
 		},
 
 		revalidate: 1,
