@@ -1,3 +1,4 @@
+import ContactInfo from "./contact-info";
 import ContactIntro from "./contact-intro";
 
 
@@ -6,6 +7,7 @@ const ContactPage = ({ contactPage }) => {
     return (
         <div>
             <ContactIntro intro={contactPage?.contactIntro} />
+            <ContactInfo info={contactPage?.contactInfo} />
         </div>
     );
 }
