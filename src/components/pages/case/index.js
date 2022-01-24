@@ -2,7 +2,6 @@ import Case from "./cases";
 import IntroCase from "./intro-module";
 
 const CasePage = ({ casePage, tax}) => {
-    console.log('the tax', tax);
     return (
         <div>
             <IntroCase intro={casePage?.caseIntro} />

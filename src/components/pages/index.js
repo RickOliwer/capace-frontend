@@ -1,5 +1,6 @@
 import CasePage from "./case";
 import About from "./about";
+import ContactPage from "./contact";
 
 const Pages = ({template, catergories}) => {
     console.log('pls', catergories);
@@ -20,7 +21,7 @@ const Pages = ({template, catergories}) => {
             ) : null}
 
             {template?.pageTemplate == 'Contact' ? (
-                <h1>hello contact</h1>
+                <ContactPage contactPage={template} />
             ) : null}
         </main>
      );
