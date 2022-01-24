@@ -2,7 +2,7 @@ import isEmpty from "lodash.isempty";
 import Image from "next/image";
 import Link from "next/link"
 
-const Card = ({link, imgAlt, imgSrc, first, second, third}) => {
+const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
     return ( 
         
         <div className='team-card'>
@@ -22,6 +22,9 @@ const Card = ({link, imgAlt, imgSrc, first, second, third}) => {
                     <div>
                         {!isEmpty(first) ? (
                             <p className='capace-oranges mb-3 text-lg'>{first}</p>
+                        ) : null}
+                        {!isEmpty(serv) ? (
+                            <p className='mb-3 text-lg'>{serv}</p>
                         ) : null}
                         {!isEmpty(second) ? (
                             <p className="text-3xl font-bold mb-3">{second} <span className='capace-oranges'>.</span></p>
@@ -48,6 +51,9 @@ const Card = ({link, imgAlt, imgSrc, first, second, third}) => {
                                 <div>
                                 {!isEmpty(first) ? (
                                     <p className='capace-oranges mb-3 text-lg'>{first}</p>
+                                ) : null}
+                                {!isEmpty(serv) ? (
+                                    <p className='mb-3 text-lg'>{serv}</p>
                                 ) : null}
                                 {!isEmpty(second) ? (
                                     <p className="text-3xl font-bold mb-3">{second} <span className='capace-oranges'>.</span></p>

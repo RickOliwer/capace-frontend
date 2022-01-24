@@ -15,6 +15,7 @@ export default function Home({ data }) {
     <Layout key="layout" data={data}>
      
     <Hero hero={data?.page} />
+    
 
     </Layout>
   )
