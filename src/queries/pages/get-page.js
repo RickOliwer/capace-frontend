@@ -3,6 +3,7 @@ import {HeaderFooter} from "../get-menus";
 import { AboutPage } from "./get-about";
 import SeoFragment from "../fragments/seo";
 import { CasePage } from "./get-casepage";
+import { ContactPage } from "./get-contact";
 
 
 export const GET_PAGE = gql`
@@ -21,6 +22,7 @@ export const GET_PAGE = gql`
 			pageTemplate
 			${AboutPage}
 			${CasePage}
+			${ContactPage}
 		}
 		
         featuredImage {
