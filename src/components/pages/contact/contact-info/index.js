@@ -10,7 +10,7 @@ const ContactInfo = ( { info } ) => {
     })
     return (
         <section>
-            <div className="lg:text-6xl text-4xl md:my-10 lg:my-28">
+            <div className="lg:text-5xl text-3xl md:my-10 lg:my-28">
                 <h3>{info[0]?.heading}<span className="capace-oranges">.</span></h3>
             </div>
             <div className="lg:grid lg:grid-cols-4 gap-10">
