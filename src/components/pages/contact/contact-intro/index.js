@@ -22,7 +22,7 @@ const ContactIntro = ( { intro } ) => {
 
                     
                     address.map((ad) =>{
-                        return <div className="text-center">
+                        return <div key={ad?.zipCodeCity} className="text-center">
                             <div className="relative w-20 h-20 m-auto mb-5">
                                 <Image src={find} layout="fill" alt="pin icon" priority />
                             </div>
