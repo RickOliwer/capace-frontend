@@ -5,7 +5,6 @@ import ContactMap from "./contact-map";
 
 
 const ContactPage = ({ contactPage }) => {
-    console.log('my contact',contactPage);
     return (
         <div>
             <ContactIntro intro={contactPage?.contactIntro} />

@@ -17,7 +17,6 @@ const ContactHours = ( { hours } ) => {
                 {
                     !isEmpty(opening) ? (
                         opening?.map((open) => {
-                            console.log('open', open);
                                 return <div key={open?.heading}>
                                     <h4>{open?.heading}<span className="capace-oranges">.</span></h4>
                                     { !isEmpty(open.time) ? (
