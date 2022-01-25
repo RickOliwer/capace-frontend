@@ -7,6 +7,13 @@ module.exports = {
     extend: {
       height: {
         'almost-screen': 'calc(-16rem + 100ch)'
+      },
+      colors: {
+        capace: {
+          dark: '#191919',
+          light: '#fff',
+          oranges: '#FF752E'
+        }
       }
     },
   },

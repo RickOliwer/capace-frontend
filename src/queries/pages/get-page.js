@@ -5,6 +5,8 @@ import SeoFragment from "../fragments/seo";
 import { CasePage } from "./get-casepage";
 import { ContactPage } from "./get-contact";
 import { ServicesPage } from "./get-service";
+import { FrontPage } from "./get-frontpage";
+
 
 
 export const GET_PAGE = gql`
@@ -25,6 +27,7 @@ export const GET_PAGE = gql`
 			${CasePage}
 			${ContactPage}
 			${ServicesPage}
+			${FrontPage}
 		}
 		
         featuredImage {
