@@ -38,7 +38,7 @@ const ServicePage = ( { servicePage } ) => {
                             />
 
                     ) : null}
-                        <h3 className="title">{serv?.title}</h3>
+                        <h3 className="title">{serv?.title}<span className="capace-oranges">.</span></h3>
                     </a></Link></div>
             })}
         </div>

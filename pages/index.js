@@ -1,5 +1,6 @@
 
 import Client from '../src/apollo/client';
+import FrontPage from '../src/components/front-page';
 import Layout from '../src/components/layout';
 import Hero from '../src/components/layout/header/hero';
 import { GET_PAGE } from '../src/queries/pages/get-page';
@@ -16,7 +17,7 @@ export default function Home({ data }) {
      
     <Hero hero={data?.page} />
     
-
+    <FrontPage template={data?.page?.pageContent} />
     </Layout>
   )
 }
