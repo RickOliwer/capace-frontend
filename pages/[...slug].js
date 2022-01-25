@@ -52,6 +52,8 @@ export async function getStaticProps( {params} ) {
 
 		revalidate: 1,
 	};
+
+    console.log(defaultProps);
     return handleRedirectsAndReturnData(defaultProps, data, errors, 'page')
 }
 

@@ -1,0 +1,102 @@
+.services_wrapper{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1em;
+    grid-auto-rows: minmax(300px, auto);
+
+        .title-container{
+
+                .service-title{
+                    
+                        div{
+                            
+                            &:nth-last-child(-n+1){
+                                &::after{
+                                    content: '.';
+                                    color: $oranges;
+                                }
+                            }
+                        }
+                }
+        }
+        div{
+            img{
+                transition: ease-in-out .5s;
+                &:hover{
+
+                    transform: scale(1.2);
+                }
+            }
+
+            .title{
+                background-color: #fff;
+                color: #33335e;
+                width: 180px;
+                margin: auto;
+                padding: 10px 10px;
+                text-align: center;
+                margin-top: 20px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                box-shadow: 2px 2px 8px 1px rgba(52, 52, 52, 0.057);
+                
+            }
+
+        }
+}
+
+@media screen and (min-width: 768px){
+    
+    .services_wrapper{
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: .4em;
+            div{
+                
+
+                &:nth-child(1){
+                    grid-column: span 1;
+                }
+                &:nth-child(2){
+                    grid-column: span;
+                    grid-row: span 2;
+                }
+                &:nth-child(3){
+                    grid-column: span 1;
+                }
+                &:nth-child(4){
+                    grid-column: span 1;
+                }
+                &:nth-child(5){
+                    grid-column: span 1;
+                }
+                &:nth-child(6){
+                    grid-column: span 2;
+                }
+                &:nth-child(7){
+                    grid-column: span 1;
+                }
+                &:nth-child(8){
+                    grid-column: span 1;
+                    grid-row: span 2;
+                }
+                &:nth-child(9){
+                    grid-column: span 1;
+                }
+                &:nth-child(10){
+                    grid-column: span 1;
+                }
+                &:nth-child(11){
+                    grid-column: span 2;
+                }
+            }
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    .services_wrapper{
+        grid-gap: 1em;
+        grid-auto-rows: minmax(500px, auto);
+    }
+}
