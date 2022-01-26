@@ -4,7 +4,6 @@ import Link from "next/link";
 const HomeIntro = ( { intro } ) => {
     let headingTwo = intro[0].heading
     const newHeadingTwo = headingTwo.split(' ')
-    console.log(intro);
     return (
         <section className="grid grid-cols-2 lg:grid-cols-5 lg:gap-36">
             <div className="col-span-2 font-light lg:col-span-2 text-capace-dark py-28">
