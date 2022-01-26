@@ -22,10 +22,8 @@ const Page = ({ data, response }) => {
         <Layout data={data}>
             <Hero hero={data?.page} />
 
-            <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges}/>
-
+            <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges} />
             
-
         </Layout>
     )
 }

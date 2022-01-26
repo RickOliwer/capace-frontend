@@ -21,7 +21,7 @@ const Case = ({ cases, taxMenu}) => {
 
     return (
         <div>
-            <div className=" p-40">
+            <div className="p-40 ">
                 <ul className="flex justify-between">
                     {
                         button?.map((t) => {
@@ -37,7 +37,7 @@ const Case = ({ cases, taxMenu}) => {
                     }
                 </ul>
             </div>
-            <div className='lg:grid lg:grid-cols-2 gap-10'>
+            <div className='gap-10 lg:grid lg:grid-cols-2'>
                 
                 {
                     menuItem?.filter((item, index) => {
@@ -56,7 +56,6 @@ const Case = ({ cases, taxMenu}) => {
                     }).map((val) => {
                         return val?.GQL_casesContent?.tjanster?.map((serv) => {
                             const joinServ = serv.services.join(' / ')
-                            
                             return (<Card 
                                         key={val?.id}
                                         link={val?.uri}

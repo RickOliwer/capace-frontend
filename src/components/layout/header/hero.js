@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import isEmpty from "lodash.isempty"
-import {Typewriter} from "react-simple-typewriter"
-//import "react-simple-typewriter/dist/index.css"
+import RCTypeWriting from '../../typewriting';
+
 
 const Hero = ({ hero }) => {
     return (             
@@ -25,9 +25,9 @@ const Hero = ({ hero }) => {
             </div>
          ) }
         
-        <div className="overlay z-10">
+        <div className="z-10 overlay">
 
-            <div className=" z-20 relative w-full h-full">
+            <div className="relative z-20 w-full h-full ">
                 <div className="absolute bottom-0 right-0 p-10 mr-6 md:mr-10 lg:mr-28">
                     <h1 className="text-3xl font-semibold text-white pb-7 lg:text-8xl">
                         {hero?.uri == '/' ? (
@@ -37,13 +37,7 @@ const Hero = ({ hero }) => {
                                  <div className='start-heading2'>
                                      let&apos;s talk
                                      <span className='type-writer'>
-                                         <Typewriter 
-                                            loop
-                                            typeSpeed={150}
-                                            deleteSpeed={50}
-                                            delaySpeed={1000}
-                                            words={['ideas', 'brand', 'design', 'code']}
-                                         />
+                                         <RCTypeWriting />
                                      </span>
                                 </div>
                              </div>

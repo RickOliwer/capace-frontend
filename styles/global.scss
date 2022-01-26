@@ -1,6 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins/Poppins-Light.ttf');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins/Poppins-Regular.ttf');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins/Poppins-SemiBold.ttf');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins/Poppins-Bold.ttf');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins/Poppins-ExtraBold.ttf');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('../public/fonts/Caveat/static/Caveat-Bold.ttf');
+    font-weight: 700;
+    font-display: swap;
+}
 $black: #2e2e2e;
 $oranges: #FF752E;
 body{
