@@ -15,7 +15,6 @@ const Case = ({ cases, taxMenu}) => {
     const [menuItem, setMenuItem] = useState(myProjects)
     const [button, setButton] = useState(taxMenu)
     const [activeFilter, setActiveFilter] = useState('')
-    console.log('menuItems', menuItem.length);
 
 
 

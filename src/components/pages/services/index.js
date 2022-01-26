@@ -12,9 +12,7 @@ const ServicePage = ( { servicePage } ) => {
 
     const theTitle = servicePage[0]?.heading
     let title = theTitle.split(" ");
-    console.log('my title', title);
 
-    console.log('myServ', myServ);
     return (
         <div className="services_wrapper">
             <div className="title-container">
