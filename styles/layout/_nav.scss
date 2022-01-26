@@ -7,7 +7,6 @@
     display: block;
     position: relative;
     z-index: 2;
-    //background: palegoldenrod;
 
         .line{
             -webkit-transition: all 0.3s ease-in-out;
@@ -114,11 +113,19 @@
     }
 }
 
+.link_scroll{
+    height: calc(-6rem + 100vh);
+}
+
+.link_not_scroll{
+    height: 100vh;
+}
+
 .link_items{
     position: fixed;
     right: 0px;
-    height: 100vh;
-    top: 0;
+    
+    bottom: 0;
     color: #fff;
     width: 100vw;
     transform: translateX(100%);

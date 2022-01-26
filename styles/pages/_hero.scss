@@ -1,6 +1,6 @@
 .hero{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
         .overlay{
             position: absolute;
@@ -9,25 +9,90 @@
             top: 0;
             left: 0;
             background: rgba($color: $black, $alpha: 0.5);
-
-                .start-heading{
-
+                div{
+                    h1{
                         .start-heading1{
-                            font-size: 400px !important;
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 100px;
+                            text-transform: uppercase;
                         }
-
+        
                         .start-heading2{
-                            font-size: 110px !important;
-
+                            font-family: 'Poppins', sans-serif;
+                            margin-top: 35px;
+                            font-size: 25px ;
+                            padding-left: 3px;
+                            text-transform: lowercase;
+        
                                 .type-writer{
                                     color: $oranges;
-                                    margin-left: 25px;
+                                    margin-left: 2px;
                                         span{
-                                            font-family: 'Caveat', cursive !important;
-                                            font-size: 170px;
+                                            font-family: 'Caveat', cursive;
+                                            margin-left: 3px;
+                                            font-size: 35px;
                                         }
                                 }
                         }
+                    }
                 }
         }
+}
+
+@media screen and (min-width: 768px){
+    .hero{
+
+            .overlay{
+
+                    div{
+                            h1{
+                                .start-heading1{
+                                    font-size: 200px;
+                                }
+                
+                                .start-heading2{
+                                    font-size: 60px;
+                                    margin-top: 80px;
+                                    padding-left: 9px;
+                
+                                        .type-writer{
+
+                                                span{
+                                                    font-size: 70px;
+                                                }
+                                        }
+                                }
+                            }
+                    }
+            }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .hero{
+
+        .overlay{
+
+                div{
+                        h1{
+                            .start-heading1{
+                                font-size: 400px;
+                            }
+            
+                            .start-heading2{
+                                font-size: 120px;
+                                margin-top: 0;
+                                padding-left: 20px;
+            
+                                    .type-writer{
+                                        padding-left: 10px;
+                                            span{
+                                                font-size: 150px;
+                                            }
+                                    }
+                            }
+                        }
+                }
+        }
+    }
 }

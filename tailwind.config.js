@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        'almost-screen': 'calc(-16rem + 100ch)'
+        'almost-screen': 'calc(-16rem + 100vh)'
       },
       colors: {
         capace: {
