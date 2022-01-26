@@ -4,7 +4,6 @@ import AboutReview from "./review-module";
 import AboutTeam from "./team-module";
 
 const About = ({ about }) => {
-    console.log('about', about);
     return ( 
         <div>
             <AboutIntro intro={about?.aboutIntro} />
