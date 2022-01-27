@@ -37,10 +37,9 @@ homeIntro {
   homeCustomers {
     heading
     kunder {
-      images {
-        altText
-        mediaItemUrl
-      }
+      altText
+      mediaItemUrl
+      id
     }
   }
   homeInstagram {

@@ -46,6 +46,22 @@ body{
     overflow-x: hidden;
 }
 
+.img-array{
+    width: 200px;
+
+        .image{
+            object-fit: contain;
+            width: 100% !important;
+            position: relative !important;
+            height: unset !important;
+        }
+}
+
+.img-array > div {
+    position: unset !important;
+}
+
+
 .border-text{
     color: $oranges;
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */

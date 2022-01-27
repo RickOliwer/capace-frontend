@@ -1,4 +1,5 @@
 import HomeCase from "./home-case";
+import HomeCustomer from "./home-customer";
 import HomeIntro from "./home-intro";
 import HomeService from "./home-service";
 
@@ -8,6 +9,7 @@ const FrontPage = ( {template} ) => {
             <HomeIntro intro={template?.homeIntro} />
             <HomeService serv={template?.homeServices} />
             <HomeCase cases={template?.homeCase} />
+            <HomeCustomer customers={template?.homeCustomers} />
         </main>
     );
 }

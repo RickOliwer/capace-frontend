@@ -10,7 +10,7 @@ const HomeCase = ( { cases } ) => {
     return (
         <section>
             <div>
-                <h2>{cases[0]?.heading}</h2>
+                <h2 className="text-5xl lg:text-7xl">{cases[0]?.heading}<span className="capace-oranges">.</span></h2>
             </div>
             <div className="gap-10 lg:grid lg:grid-cols-2">
                 {
