@@ -8,8 +8,6 @@ const HomeCustomer = ( { customers } ) => {
             kunder.push(kund)
         })
     })
-
-    console.log('mina kunder', kunder);
     return (
         <section className="my-6 md:my-10 lg:my-28">
             <div>
@@ -18,12 +16,13 @@ const HomeCustomer = ( { customers } ) => {
             <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2 bg-capace-dark">
                 {!isEmpty(kunder) ? (
                     kunder?.map((img) => {
-                        return <div key={img?.id} className="relative w-40 h-40 m-auto img-array">
+                        return <div key={img?.id} className="relative w-40 h-40 m-auto">
                             <Image 
                                 src={img?.mediaItemUrl}
                                 alt={img?.altText}
                                 layout="fill"
-                                className="image"
+                                className=""
+                                objectFit="contain"
                                 priority
                             />
                         </div>

@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import isEmpty from "lodash.isempty"
 import RCTypeWriting from '../../typewriting';
+import Link from 'next/link';
 
 
-const Hero = ({ hero }) => {
+const Hero = ({ hero, logo }) => {
     return (             
     
     <div className="hero">
@@ -26,6 +27,25 @@ const Hero = ({ hero }) => {
          ) }
         
         <div className="z-10 overlay">
+            <div className='absolute top-6 left-6'>
+
+                {!isEmpty(logo) ? (
+                    <Link href="/">
+                        <a>
+
+                            <div className='relative w-36 h-36'>
+                                <Image 
+                                    layout="fill"
+                                    objectFit='contain'
+                                    alt="site logo"
+                                    src={logo}
+                                    priority
+                                />
+                            </div>
+                        </a>
+                    </Link>
+                ) : null}
+            </div>
 
             <div className="absolute bottom-0 right-0 mr-6 md:mr-10 lg:mr-28">
                         {hero?.uri == '/' ? (

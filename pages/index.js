@@ -15,7 +15,7 @@ export default function Home({ data }) {
   return (
     <Layout key="layout" data={data}>
      
-      <Hero hero={data?.page} />
+      <Hero hero={data?.page} logo={data?.header?.siteLogoUrl} />
       
       <FrontPage template={data?.page?.pageContent} />
     </Layout>

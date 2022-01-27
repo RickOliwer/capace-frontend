@@ -73,29 +73,14 @@ const Nav = ({ header, headerMenus }) => {
 
     
     return ( 
-        <nav className="fixed z-40 w-full">
-            <div className={`${ isMenuScroll ? 'bg-capace h-24' : ''}relative inset-x-0 flex justify-between w-full h-24 transition duration-1000 ease-in-out`}>
+        <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg fixed z-40 w-16 h-13 right-6 top-6 transition duration-1000 ease-in-out button-center`}>
+            
 
-                {/* Site Logo */}
-                {!isEmpty(header?.siteLogoUrl) ? (
-
-                    <Link href="/">
-                        <a
-                            className={`relative block h-16 w-16 z-50 my-4 ml-6 md:ml-10 lg:ml-28 cursor-pointer`}
-                        >
-                            <Image 
-                                layout='fill'
-                                alt='logo'
-                                src={header?.siteLogoUrl}
-                                priority
-                            />
-                        </a>
-                    </Link>
-                ): null}
+                
  
       
 
-                <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'click' : '' } nav_button mr-6 md:mr-10 lg:mr-28 my-auto`} id="nav_button">
+                <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'click' : '' } nav_button`} id="nav_button">
                     <span className="line"></span>
                     <span className="line"></span>
                     <span className="line"></span>
@@ -105,7 +90,7 @@ const Nav = ({ header, headerMenus }) => {
 
 
                 {headerMenus?.length ? (
-                    <div className={`${isOpen ? 'items_active' : '' } ${isMenuScroll ? 'link_scroll' : 'link_not_scroll'} link_items bg-capace`}>
+                    <div className={`${isOpen ? 'items_active' : '' } link_items bg-capace`}>
                         <div className="item-position">
                             {headerMenus?.map( menu => (
                             
@@ -115,9 +100,7 @@ const Nav = ({ header, headerMenus }) => {
                                         <a className='text-2xl' onClick={() => setIsOpen(!isOpen)}>{menu?.node?.label}</a>
                                     </Link>
                                 : 
-                                    // <Link key={menu?.node?.id} href={menu?.node?.path}>
-                                    //     <a className=''>{menu?.node?.label}</a>
-                                    // </Link>
+
                                     <div key={menu?.node?.id} className='child_link'>
                                         <p  onClick={() => setDropped(!isDropped)} className={`${isDropped ? 'services' : '' } text-2xl cursor-pointer`}>{menu?.node?.label}</p>
                                         <div  className={`${isDropped ? 'show' : '' } child_items`}>
@@ -136,7 +119,7 @@ const Nav = ({ header, headerMenus }) => {
                     </div>
                 
                 ) : null}
-            </div>
+            
  
         </nav>
                      

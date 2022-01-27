@@ -20,7 +20,7 @@ const Page = ({ data, response }) => {
     
     return (
         <Layout data={data}>
-            <Hero hero={data?.page} />
+            <Hero hero={data?.page} logo={data?.header?.siteLogoUrl}/>
 
             <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges} />
             
@@ -31,6 +31,7 @@ const Page = ({ data, response }) => {
 export default Page;
 
 export async function getStaticProps( {params} ) {
+
 	const { data, errors } = await Client.query( {
 		query: GET_PAGE,
 		variables: {
