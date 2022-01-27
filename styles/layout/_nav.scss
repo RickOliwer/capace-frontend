@@ -152,12 +152,10 @@
                             flex-direction: column;
                             justify-content: space-around;
                             position: fixed;
-                            right: 0px;
+                            left: 130%;
                             height: 75vh;
                             color: #fff;
-                            width: 30vw;
-                            transform: translateX(200%);
-                            
+                            width: 10rem;
                             transition: transform .7s ease-in;
                             z-index: 1;
 
@@ -170,10 +168,6 @@
                                 }
                         }
 
-                        .show{
-                            transform: translateX(120%);
-                            
-                        }
                         .services{
                             color: #ff752e;
                         }
@@ -197,13 +191,13 @@
     }
 }
 
-@keyframes LinksDestroy{
+@keyframes LogoActive{
     from{
-        opacity: 1;
-        transform: translateX(0);
+        opacity: 0;
+        transform: translateX(100px);
     }
     to{
-        opacity: 0;
-        transform: translateX(400px);
+        opacity: 1;
+        transform: translateX(0);
     }
 }

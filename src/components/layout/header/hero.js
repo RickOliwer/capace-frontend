@@ -27,7 +27,7 @@ const Hero = ({ hero, logo }) => {
          ) }
         
         <div className="z-10 overlay">
-            <div className='absolute top-6 left-6'>
+            <div className='absolute top-10 left-10'>
 
                 {!isEmpty(logo) ? (
                     <Link href="/">

@@ -15,6 +15,8 @@ const Nav = ({ header, headerMenus }) => {
         links.current[index] = link;
     }
 
+    const logo = useRef()
+
     useEffect(() => {
         const handleEsc = (event) => {
            if (event.keyCode === 27) {
@@ -62,7 +64,12 @@ const Nav = ({ header, headerMenus }) => {
              l.style.animation = ""
          }
      })
-    }, [isDropped])
+     if(isOpen){
+        logo.current.style.animation = `LogoActive 0.5s ease forwards 1s`
+     } else {
+        logo.current.style.animation = ""
+     }
+    }, [isDropped, isOpen])
 
   
 
@@ -91,19 +98,32 @@ const Nav = ({ header, headerMenus }) => {
 
                 {headerMenus?.length ? (
                     <div className={`${isOpen ? 'items_active' : '' } link_items bg-capace`}>
+                        <div ref={logo} className='absolute opacity-0 top-10 left-10'>
+                            {!isEmpty(header?.siteLogoUrl) ? (
+                                        <div className='relative w-36 h-36'>
+                                            <Image 
+                                                layout="fill"
+                                                objectFit='contain'
+                                                alt="site logo"
+                                                src={header?.siteLogoUrl}
+                                                priority
+                                            />
+                                        </div>
+                            ) : null}
+                        </div>
                         <div className="item-position">
                             {headerMenus?.map( menu => (
                             
                                 isEmpty(menu?.node?.childItems?.edges) 
                                 ? 
                                     <Link key={menu?.node?.id} href={menu?.node?.path}>
-                                        <a className='text-2xl' onClick={() => setIsOpen(!isOpen)}>{menu?.node?.label}</a>
+                                        <a className='text-2xl hover:text-capace-oranges' onClick={() => setIsOpen(!isOpen)}>{menu?.node?.label}</a>
                                     </Link>
                                 : 
 
                                     <div key={menu?.node?.id} className='child_link'>
                                         <p  onClick={() => setDropped(!isDropped)} className={`${isDropped ? 'services' : '' } text-2xl cursor-pointer`}>{menu?.node?.label}</p>
-                                        <div  className={`${isDropped ? 'show' : '' } child_items`}>
+                                        <div  className={`${isDropped} child_items`}>
                                             {menu?.node?.childItems?.edges.map((child, index) => {
                                                 return <li key={child.node.id} ref={(e) => createLinksRefs(e, index)}>
                                                     <Link href={child?.node.path}><a onClick={() => setIsOpen(!isOpen)} className="text-base">{child?.node.label}</a></Link>
