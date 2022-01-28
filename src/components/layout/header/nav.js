@@ -124,10 +124,19 @@ const Nav = ({ header, headerMenus }) => {
                                     <div key={menu?.node?.id} className='child_link'>
                                         <p  onClick={() => setDropped(!isDropped)} className={`${isDropped ? 'services' : '' } text-2xl cursor-pointer`}>{menu?.node?.label}</p>
                                         <div  className={`${isDropped} child_items`}>
+
                                             {menu?.node?.childItems?.edges.map((child, index) => {
+                                                
                                                 return <li key={child.node.id} ref={(e) => createLinksRefs(e, index)}>
-                                                    <Link href={child?.node.path}><a onClick={() => setIsOpen(!isOpen)} className="text-base">{child?.node.label}</a></Link>
-                                                </li>
+                                                            <Link href={child?.node.path}>
+                                                                <a 
+                                                                    onClick={() => setIsOpen(!isOpen)} 
+                                                                    className="text-base"
+                                                                >
+                                                                    {child?.node.label}
+                                                                </a>
+                                                            </Link>
+                                                        </li>
                                             })}
                                             
                                         </div>
