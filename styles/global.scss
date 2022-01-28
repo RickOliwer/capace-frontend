@@ -78,6 +78,13 @@ ul.flex-list{
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     color: $black;
+    transition: ease-in-out .3s;
+        &:hover{
+            transform: scale(1.1);
+            color: $oranges;
+            border: 1px solid $oranges;
+
+        }
 }
 
 .poppins{

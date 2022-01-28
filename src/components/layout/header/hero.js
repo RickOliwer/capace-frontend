@@ -57,7 +57,7 @@ const Hero = ({ hero, logo }) => {
 
                         ) : (
                             <h1 className="text-3xl font-semibold text-white pb-7 lg:text-8xl">
-                            <div>{hero?.title} <span>.</span></div>
+                            <div>{hero?.title}<span className='text-capace-oranges'>.</span></div>
                             </h1>
                         )}
 
