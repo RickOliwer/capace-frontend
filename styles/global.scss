@@ -46,6 +46,19 @@ body{
     overflow-x: hidden;
 }
 
+ul.flex-list{
+    li{
+        list-style: disc !important;
+        margin-left: 30px;
+
+        &:nth-child(1){
+            list-style: none !important;
+            margin-left: 0px;
+        }
+        
+    }
+}
+
 .border-text{
     color: $oranges;
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */
@@ -75,14 +88,24 @@ body{
     background-color: #191919;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3{
     font-family: 'Poppins', sans-serif;
     font-weight: 700 !important;
     margin-bottom: .65em !important;
 }
 
+h4, h5, h6{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300 !important;
+
+}
+
 p, span, a{
     font-family: 'Poppins', sans-serif;
+}
+
+.img-shadow{
+    box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.15);
 }
 
 .page_title{

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Client from "../../src/apollo/client";
 import Layout from "../../src/components/layout";
 import Hero from "../../src/components/layout/header/hero";
+import CasePost from "../../src/components/posts/single-case";
 import { GET_CASE_BY_SLUG } from "../../src/queries/posts/case/get-case";
 import { GET_CASES_URI } from "../../src/queries/posts/case/get-cases";
 import { FALLBACK, handleRedirectsAndReturnData, isCustomPageUri } from "../../src/utils/slugs";
@@ -15,10 +16,10 @@ const PostCase = ({data}) => {
     if(router.isFallback){
         return <div>Loading...</div>
     }
-    console.log('my data', data);
     return (
         <Layout key={data?.singleCase?.id} data={data}>
             <Hero hero={data?.singleCase} logo={data?.header?.siteLogoUrl}/>
+            <CasePost singleCase={data?.singleCase?.GQL_casesContent} />
         </Layout>
     );
 }

@@ -80,7 +80,7 @@ const Nav = ({ header, headerMenus }) => {
 
     
     return ( 
-        <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg fixed z-40 w-16 h-13 right-6 top-6 transition duration-1000 ease-in-out button-center`}>
+        <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg fixed z-40 w-16 h-14 md:right-6 md:top-6 right-2 top-2 transition duration-1000 ease-in-out button-center`}>
             
 
                 
@@ -98,9 +98,9 @@ const Nav = ({ header, headerMenus }) => {
 
                 {headerMenus?.length ? (
                     <div className={`${isOpen ? 'items_active' : '' } link_items bg-capace`}>
-                        <div ref={logo} className='absolute opacity-0 top-10 left-10'>
+                        <div ref={logo} className='absolute opacity-0 md:top-10 md:left-10 top-4 left-4'>
                             {!isEmpty(header?.siteLogoUrl) ? (
-                                        <div className='relative w-36 h-36'>
+                                        <div className='relative w-16 h-16 md:w-36 md:h-36'>
                                             <Image 
                                                 layout="fill"
                                                 objectFit='contain'

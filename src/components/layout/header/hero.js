@@ -27,13 +27,13 @@ const Hero = ({ hero, logo }) => {
          ) }
         
         <div className="z-10 overlay">
-            <div className='absolute top-10 left-10'>
+            <div className='absolute md:top-10 md:left-10 top-6 left-2'>
 
                 {!isEmpty(logo) ? (
                     <Link href="/">
                         <a>
 
-                            <div className='relative w-36 h-36'>
+                            <div className='relative w-20 h-20 md:w-36 md:h-36'>
                                 <Image 
                                     layout="fill"
                                     objectFit='contain'
