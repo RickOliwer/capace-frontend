@@ -11,15 +11,19 @@ const SecondSection = ( { secondSection } ) => {
 
                 {!isEmpty(secondSection?.slutresultat[0]?.slutresultatImg) ? (
                     secondSection?.slutresultat[0]?.slutresultatImg?.map((img) => {
-                        return <div key={img?.id} className="relative w-full h-96 img-shadow">
-                            <Image 
-                                layout="fill"
-                                objectFit="cover"
+                        return <Image
+                                key={img?.id} 
+                                layout="responsive"
+                                objectFit="contain"
                                 src={img?.mediaItemUrl}
                                 alt={img?.altText}
                                 priority
+                                width="100%" 
+                                height="100%" 
+                                className="img-shadow"
+                                
                             />
-                        </div>
+                       
                     })
                 ) : null}
             </div>

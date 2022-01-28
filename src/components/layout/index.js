@@ -8,15 +8,15 @@ import Head from "next/head";
 
 const Layout = ({children, data}) => {
 
-    if(isEmpty(data?.page || data?.singleCase)){
+    if(isEmpty(data?.page || data?.singleCase || data?.singleService)){
         return null
     }
 
-    const {page, header, singleCase, footer, headerMenus, footerMenus} = data || {};
+    const {page, header, singleCase, singleService, footer, headerMenus, footerMenus} = data || {};
     
     return ( 
         <div>
-            <Seo seo={page?.seo || singleCase?.seo} uri={page?.uri || singleCase?.seo} />
+            <Seo seo={page?.seo || singleCase?.seo || singleService?.seo} uri={page?.uri || singleCase?.uri || singleService?.uri} />
             <Head>
                 <link rel="shortcut icon" href={ header?.favicon } />
                 {page?.seo?.schemaDetails && (
