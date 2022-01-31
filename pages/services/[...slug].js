@@ -18,7 +18,7 @@ const PostService = ({data}) => {
     return (
         <Layout key={data?.singleService?.id} data={data}>
             <Hero hero={data?.singleService} logo={data?.header?.siteLogoUrl} />
-            <ServicePost singleService={data?.singleService?.GQL_servicesContent} />
+            <ServicePost singleService={data?.singleService?.GQL_servicesContent} theServ={data?.singleService?.title} />
         </Layout>
     );
 }

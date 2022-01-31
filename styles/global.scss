@@ -111,6 +111,10 @@ h4, h5, h6{
 
 }
 
+label{
+    font-family: 'Poppins', sans-serif;
+}
+
 p, span, a{
     font-family: 'Poppins', sans-serif;
 }
@@ -129,10 +133,25 @@ p, span, a{
             &:nth-child(2){
                 margin-bottom: .45em;
             }
-            &:nth-child(3){
+            &:nth-last-child(-n+1){
                 font-family: 'Caveat', cursive ;
                 color: #FF752E ;
                 font-size: 4.375rem;
+
+                
+            }
+    }
+}
+
+.post_title{
+    span{
+            &:nth-child(odd){
+                padding-bottom: .5em;
+            }
+            &:nth-last-child(-n+1){
+                font-family: 'Caveat', cursive ;
+                color: #FF752E ;
+                font-size: 6.375rem;
             }
     }
 }

@@ -134,11 +134,11 @@
         .item-position{
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: flex-start;
-            height: 90vh;
+            height: 65vh;
             position: absolute;
-            left: 30%;
+            left: 20%;
             top: 50%;
             transform: translate(-50%, -50%);
 
@@ -151,11 +151,11 @@
                         .child_items{
                             display: flex;
                             flex-direction: column;
-                            justify-content: space-around;
+                            justify-content: space-between;
                             align-items: flex-start;
                             position: fixed;
                             left: 130%;
-                            height: 75vh;
+                            height: 65vh;
                             color: #fff;
                             width: 10rem;
                             transition: transform .7s ease-in;
