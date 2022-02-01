@@ -32,7 +32,7 @@ export async function getStaticProps( { params } ){
             uri: params?.slug.join( '/' ),
         }
     } );
-
+    console.log(params);
     const defaultProps = {
         props: {
             data: data || {},

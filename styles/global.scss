@@ -83,8 +83,9 @@ ul.flex-list{
     font-size: 12px;
     color: $black;
     transition: ease-in-out .3s;
+    cursor: pointer;
         &:hover{
-            transform: scale(1.1);
+            transform: scale(1.07);
             color: $oranges;
             border: 1px solid $oranges;
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Form = ( { theServ } ) => {
     const {register, handleSubmit, reset, formState: { errors }} = useForm()
-    const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = useState(false)
+    const [isSubmitted, setSubmitted] = useState(false)
 
     async function onSubmitForm(values){
         let config = {
@@ -19,8 +19,8 @@ const Form = ( { theServ } ) => {
         try {
             const response = await axios(config);
             if(response.status == 200){
-                //reset();
-                setIsSuccessfullySubmitted(response)
+                setSubmitted(isSubmitted)
+                console.log(response);
             }
         } catch (error) {
             console.log(error);
@@ -35,7 +35,9 @@ const Form = ( { theServ } ) => {
         <p>Fyll formuläret nedan så kontaktar vi dig.</p>
         
         <form onSubmit={handleSubmit(onSubmitForm)} className="my-10 grid gap-3">
-       
+            {isSubmitted ? (
+                <div>Success</div>
+            ) : null}
             <input 
                 type="text" 
                 defaultValue={theServ} 
