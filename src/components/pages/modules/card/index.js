@@ -64,7 +64,7 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
                                 </div>
                             </a>
                         </Link>
-                )
+                    )
             }
             
         </div> 

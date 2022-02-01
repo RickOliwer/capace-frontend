@@ -17,10 +17,10 @@ const PostCase = ({data}) => {
         return <div>Loading...</div>
     }
     return (
-        <Layout key={data?.singleCase?.id} data={data}>
+        <>
             <Hero hero={data?.singleCase} logo={data?.header?.siteLogoUrl}/>
             <CasePost singleCase={data?.singleCase?.GQL_casesContent} />
-        </Layout>
+        </>
     );
 }
  

@@ -1,7 +1,7 @@
 import isEmpty from "lodash.isempty"
 import { useRouter } from "next/router";
 import Client from "../src/apollo/client";
-import Layout from "../src/components/layout";
+//import Layout from "../src/components/layout";
 import { GET_PAGE } from "../src/queries/pages/get-page";
 import { GET_PAGES_URI } from "../src/queries/pages/get-pages";
 import { FALLBACK, isCustomPageUri } from "../src/utils/slugs";
@@ -19,12 +19,12 @@ const Page = ({ data, response }) => {
     }
     
     return (
-        <Layout data={data}>
+        <>
             <Hero hero={data?.page} logo={data?.header?.siteLogoUrl}/>
 
             <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges} />
             
-        </Layout>
+        </>
     )
 }
  
