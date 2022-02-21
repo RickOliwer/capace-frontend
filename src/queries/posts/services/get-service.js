@@ -41,12 +41,17 @@ export const GET_SERVICE_BY_URI = gql`
               }
             }
             GQL_servicesContent {
-              servicesIntro {
-                introTitle
-                introText
-                underRubriker {
-                  title
-                  text
+              sektion {
+                ... on GqlService_GqlServicescontent_Sektion_Intro {
+                  fieldGroupName
+                  rubrik1
+                  rubrik2
+                  utdrag
+                  textGrid {
+                    rubrik
+                    text
+                    avslut
+                  }
                 }
               }
               servicesCase {

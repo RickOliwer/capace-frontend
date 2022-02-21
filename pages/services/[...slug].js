@@ -1,6 +1,7 @@
 import isEmpty from "lodash.isempty";
 import { useRouter } from "next/router";
 import Client from "../../src/apollo/client";
+import Blocks from "../../src/components/Blocks";
 import Layout from "../../src/components/layout";
 import Hero from "../../src/components/layout/header/hero";
 import ServicePost from "../../src/components/posts/single-service";
@@ -18,6 +19,7 @@ const PostService = ({data}) => {
     return (
         <>
             <Hero hero={data?.singleService} logo={data?.header?.siteLogoUrl} />
+            <Blocks block={data?.singleService?.GQL_servicesContent}/>
             <ServicePost singleService={data?.singleService?.GQL_servicesContent} theServ={data?.singleService?.title} />
         </>
     );

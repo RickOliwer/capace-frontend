@@ -42,17 +42,17 @@ query GET_CAREER_BY_SLUG($uri: String) {
             }
       }
       GQL_flexibleCareer {
-        section {
-          ... on GQLCareer_GqlFlexiblecareer_Section_Intro {
+        sektion {
+          ... on GQLCareer_GqlFlexiblecareer_Sektion_Intro {
             fieldGroupName
-            heading1
-            heading2
-            text
+            rubrik1
+            rubrik2
+            utdrag
           }
-          ... on GQLCareer_GqlFlexiblecareer_Section_HeadingText {
+          ... on GQLCareer_GqlFlexiblecareer_Sektion_HeadingText {
             fieldGroupName
-            heading
-            list {
+            rubrik
+            lista {
               text
             }
             textBox {
