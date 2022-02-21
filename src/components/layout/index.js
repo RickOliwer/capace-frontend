@@ -8,23 +8,23 @@ import Head from "next/head";
 
 const Layout = ({children, data}) => {
 
-    if(isEmpty(data?.page || data?.singleCase || data?.singleService)){
+    if(isEmpty(data?.page || data?.singleCase || data?.singleService || data?.singleCareer)){
         return null
     }
 
-    const {page, header, singleCase, singleService, footer, headerMenus, footerMenus} = data || {};
+    const {page, header, singleCase, singleService, singleCareer, footer, headerMenus, footerMenus} = data || {};
     
     return ( 
         <div>
-            <Seo seo={page?.seo || singleCase?.seo || singleService?.seo} uri={page?.uri || singleCase?.uri || singleService?.uri} />
+            <Seo seo={page?.seo || singleCase?.seo || singleService?.seo || singleCareer?.seo} uri={page?.uri || singleCase?.uri || singleService?.uri || singleCareer?.uri} />
             <Head>
                 <link rel="shortcut icon" href={ header?.favicon } />
-                {page?.seo?.schemaDetails && (
+                {page?.seo?.schemaDetails || singleCareer?.seo?.schemaDetails || singleCase?.seo?.schemaDetails || singleService?.seo?.schemaDetails && (
                     <script 
                         type='application/ld+json'
                         className='yoast-schema-graph'
                         key='yoastSchema'
-                        dangerouslySetInnerHTML={{ __html: sanitize(page?.seo?.schemaDetails)}}
+                        dangerouslySetInnerHTML={{ __html: sanitize(page?.seo?.schemaDetails || singleCareer?.seo?.schemaDetails || singleCase?.seo?.schemaDetails || singleService?.seo?.schemaDetails)}}
 
                     />
                 )}

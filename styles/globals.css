@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.layout-top{
+    @apply mt-6 md:mt-10 lg:mt-28;
+}
+
+.layout{
+    @apply mx-6 md:mx-10 lg:mx-28;
+}

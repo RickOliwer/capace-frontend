@@ -1,7 +1,6 @@
 import isEmpty from "lodash.isempty"
 import { useRouter } from "next/router";
 import Client from "../src/apollo/client";
-//import Layout from "../src/components/layout";
 import { GET_PAGE } from "../src/queries/pages/get-page";
 import { GET_PAGES_URI } from "../src/queries/pages/get-pages";
 import { FALLBACK, isCustomPageUri } from "../src/utils/slugs";
@@ -73,7 +72,6 @@ export async function getStaticPaths() {
             }
         }
     })
-    console.log('paths', pathsData);
     return {
         paths: pathsData,
         fallback: FALLBACK
