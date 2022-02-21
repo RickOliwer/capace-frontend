@@ -49,6 +49,28 @@ export const GET_SERVICE_BY_URI = gql`
                   text
                 }
               }
+              servicesCase {
+                title
+                text
+                projects {
+                  ... on GQLCase {
+                    id
+                    uri
+                    featuredImage {
+                      node {
+                        altText
+                        mediaItemUrl
+                      }
+                    }
+                    GQL_casesContent {
+                      tjanster {
+                        services
+                      }
+                    }
+                    title
+                  }
+                }
+              }
               servicesInfo {
                 infoTitle
                 infoExcerpt

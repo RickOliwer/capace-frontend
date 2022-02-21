@@ -26,13 +26,14 @@ const PostService = ({data}) => {
 export default PostService;
 
 export async function getStaticProps( { params } ){
+
     const { data, errors } = await Client.query( {
         query: GET_SERVICE_BY_URI,
         variables: {
             uri: params?.slug.join( '/' ),
         }
     } );
-    console.log(params);
+    
     const defaultProps = {
         props: {
             data: data || {},
@@ -50,6 +51,7 @@ export async function getStaticPaths() {
     const pathsData = [];
 
     data?.allServices?.nodes && data?.allServices?.nodes.map( myService => {
+        console.log('enyone there', myService);
         if( ! isEmpty( myService?.uri && ! isCustomPageUri( myService?.uri ))) {
             const slugs = myService?.uri?.split('/').filter( myServiceSlug => myServiceSlug );
             if(slugs.length > 0){
@@ -57,6 +59,7 @@ export async function getStaticPaths() {
             }
         }
     })
+
     return {
         paths: pathsData,
         fallback: FALLBACK

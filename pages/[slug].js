@@ -35,7 +35,7 @@ export async function getStaticProps( {params} ) {
 	const { data, errors } = await Client.query( {
 		query: GET_PAGE,
 		variables: {
-			uri: params?.slug.join( '/' ),
+			uri: params?.slug,
 		},
 	} );
 
@@ -60,6 +60,7 @@ export async function getStaticPaths() {
     const { data } = await Client.query({
         query: GET_PAGES_URI
     })
+    
 
     const pathsData = [];
 
@@ -72,7 +73,7 @@ export async function getStaticPaths() {
             }
         }
     })
-
+    console.log('paths', pathsData);
     return {
         paths: pathsData,
         fallback: FALLBACK
