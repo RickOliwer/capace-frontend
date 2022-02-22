@@ -1,0 +1,12 @@
+.intro-block{
+    
+        .intro-grid{
+
+            .grid-item{
+
+                    &:nth-child(1){
+                        grid-column: span 2;
+                    }
+            }
+        }
+}
