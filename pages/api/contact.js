@@ -28,8 +28,6 @@ const Mail = async (req, res) => {
       <p><strong>Meddelande: </strong> ${message} </p>
       `,
     })
-
-    console.log('message sent');
   } catch (error) {
     console.log(error);
   }

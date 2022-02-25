@@ -19,8 +19,8 @@ const PostService = ({data}) => {
     return (
         <>
             <Hero hero={data?.singleService} logo={data?.header?.siteLogoUrl} />
-            <Blocks block={data?.singleService?.GQL_servicesContent} pageTitle={data?.singleService?.title}/>
-            <ServicePost singleService={data?.singleService?.GQL_servicesContent} />
+            <Blocks block={data?.singleService?.GQL_servicesContent} pageTitle={data?.singleService?.title} />
+            <ServicePost singleService={data?.singleService?.GQL_servicesContent}/>
         </>
     );
 }
@@ -53,7 +53,6 @@ export async function getStaticPaths() {
     const pathsData = [];
 
     data?.allServices?.nodes && data?.allServices?.nodes.map( myService => {
-        console.log('enyone there', myService);
         if( ! isEmpty( myService?.uri && ! isCustomPageUri( myService?.uri ))) {
             const slugs = myService?.uri?.split('/').filter( myServiceSlug => myServiceSlug );
             if(slugs.length > 0){

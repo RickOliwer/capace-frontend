@@ -7,6 +7,7 @@ export const GET_SERVICES_URI = gql`
             nodes {
               id
               uri
+              slug
             }
           }
     }

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Form from "./form";
 
 const Intro = ( { content, title } ) => {
-    console.log('intro', content);
     const [isGrid, setGrid] = useState(false)
 
     useEffect(() => {

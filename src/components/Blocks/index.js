@@ -2,7 +2,6 @@ import HeadingText from "./sections/headingText";
 import Intro from "./sections/intro";
 
 const Blocks = ( { block, pageTitle } ) => {
-    console.log('pageTitle', pageTitle);
     return (
         <main className="layout">
             {block?.sektion?.map((block, index) => {

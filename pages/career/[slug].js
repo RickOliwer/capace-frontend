@@ -16,7 +16,6 @@ const PostCareer = ({data}) => {
         return <div>Loading...</div>
     }
 
-    console.log('hello block', data);
     return (
         <>
             <Hero hero={data?.singleCareer} logo={data?.header?.siteLogoUrl}/>

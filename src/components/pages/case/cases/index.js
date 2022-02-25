@@ -47,7 +47,6 @@ const Case = ({ cases, taxMenu}) => {
                             const projectCat = item.gQLCaseCategories.edges.map((i) => {
                                     return i.node.name
                             })
-                            console.log('projectCat', projectCat, index);
                             if(projectCat.includes(activeFilter)){
                                 return true
                             }
