@@ -50,53 +50,55 @@ export const GET_SERVICE_BY_URI = gql`
                   textGrid {
                     rubrik
                     text
-                    avslut
                   }
                 }
-              }
-              servicesCase {
-                title
-                text
-                projects {
-                  ... on GQLCase {
-                    id
-                    uri
-                    featuredImage {
-                      node {
-                        altText
-                        mediaItemUrl
-                      }
+                ... on GqlService_GqlServicescontent_Sektion_Blurbs {
+                  fieldGroupName
+                  blurb {
+                    ikon {
+                      altText
+                      mediaItemUrl
+                      id
                     }
-                    GQL_casesContent {
-                      tjanster {
-                        services
-                      }
-                    }
-                    title
+                    rubrik
+                    text
                   }
                 }
-              }
-              servicesInfo {
-                infoTitle
-                infoExcerpt
-                cards {
-                  bild {
-                    altText
-                    id
-                    mediaItemUrl
+                ... on GqlService_GqlServicescontent_Sektion_KortInfo {
+                  fieldGroupName
+                  kort {
+                    bild {
+                      altText
+                      id
+                      mediaItemUrl
+                    }
+                    rubrik
+                    text
                   }
-                  title
+                }
+                ... on GqlService_GqlServicescontent_Sektion_Cases {
+                  fieldGroupName
+                  rubrik
                   text
+                  case {
+                    ... on GQLCase {
+                      id
+                      uri
+                      featuredImage {
+                        node {
+                          altText
+                          id
+                          mediaItemUrl
+                        }
+                      }
+                      GQL_casesContent {
+                        tjanster {
+                          services
+                        }
+                      }
+                    }
+                  }
                 }
-              }
-              servicesShortFacts {
-                icone {
-                  altText
-                  id
-                  mediaItemUrl
-                }
-                title
-                text
               }
             }
           } 

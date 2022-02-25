@@ -1,3 +1,6 @@
+import Blurb from "./sections/blurb";
+import CardInfo from "./sections/cardInfo";
+import Cases from "./sections/cases";
 import HeadingText from "./sections/headingText";
 import Intro from "./sections/intro";
 
@@ -23,6 +26,15 @@ export const Block = ( { section, title } ) => {
             break;
         case "GqlService_GqlServicescontent_Sektion_Intro":
             return <Intro content={section} title={title} />
+            break;
+        case "GqlService_GqlServicescontent_Sektion_Blurbs":
+            return <Blurb content={section} />
+            break;
+        case "GqlService_GqlServicescontent_Sektion_KortInfo":
+            return <CardInfo content={section} />
+            break;
+        case "GqlService_GqlServicescontent_Sektion_Cases":
+            return <Cases content={section} />
             break;
         default:
             return  <div>{section.fieldGroupName}</div>;

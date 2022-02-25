@@ -4,25 +4,34 @@ import Client from "../src/apollo/client";
 import { GET_PAGE } from "../src/queries/pages/get-page";
 import { GET_PAGES_URI } from "../src/queries/pages/get-pages";
 import { FALLBACK, isCustomPageUri } from "../src/utils/slugs";
-import { handleRedirectsAndReturnData } from '../src/utils/slugs';
 import Pages from "../src/components/pages";
 import Hero from "../src/components/layout/header/hero";
 import { GET_TAX } from "../src/queries/categories";
+import { GET_SERVICES_URI } from "../src/queries/posts/services/get-services";
+import { GET_SERVICE_BY_URI } from "../src/queries/posts/services/get-service";
+import Blocks from "../src/components/Blocks";
+
 
 
 const Page = ({ data, response }) => {
     const router = useRouter()
-
-    if( router.isFallback){
-        return <div>Loading...</div>
-    }
-    
     return (
         <>
-            <Hero hero={data?.page} logo={data?.header?.siteLogoUrl}/>
+            {!isEmpty(data?.page) && (
+                <>
+                    <Hero hero={data?.page} logo={data?.header?.siteLogoUrl}/>
+        
+                    <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges} />
+                
+                </>
+            )}
 
-            <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges} />
-            
+            {!isEmpty(data?.singleService) && (
+                <>
+                    <Hero hero={data?.singleService} logo={data?.header?.siteLogoUrl} />
+                    <Blocks block={data?.singleService?.GQL_servicesContent} pageTitle={data?.singleService?.title} />
+                </>
+            )}
         </>
     )
 }
@@ -30,34 +39,58 @@ const Page = ({ data, response }) => {
 export default Page;
 
 export async function getStaticProps( {params} ) {
-
-	const { data, errors } = await Client.query( {
+    let data = null
+	const { data: page, errors } = await Client.query( {
 		query: GET_PAGE,
 		variables: {
 			uri: params?.slug,
 		},
 	} );
-
+    
     const response = await Client.query({
         query: GET_TAX
     })
 
-	const defaultProps = {
-		props: {
+    const {data: serv} = await Client.query( {
+        query: GET_SERVICE_BY_URI,
+        variables: {
+            uri: params?.slug,
+        }
+    } );
+    if (page.page) {
+        data = page
+    }
+    if (serv.singleService) {
+        data = serv
+    }
+    
+    if(!data.page && !serv.singleService){
+        return {
+            notFound: true
+        }
+    }
+    
+    return {
+        props: {
 			data: data || {},
             response: response,
+            serv: serv || {},
 		},
 
 		revalidate: 1,
-	};
+    }
 
-    return handleRedirectsAndReturnData(defaultProps, data, errors, 'page')
 }
 
 
 export async function getStaticPaths() {
+    
     const { data } = await Client.query({
         query: GET_PAGES_URI
+    })
+
+    const { data:res } = await Client.query({
+        query: GET_SERVICES_URI,
     })
     
 
@@ -66,12 +99,22 @@ export async function getStaticPaths() {
     data?.pages?.nodes && data?.pages?.nodes.map( page => {
         if(! isEmpty( page?.uri && ! isCustomPageUri( page?.uri )) ) {
             const slugs = page?.uri?.split('/').filter( pageSlug => pageSlug );
-            
             if(slugs.length > 0){
                 pathsData.push( {params: { slug: slugs }} )
+                
             }
         }
     })
+
+    res?.allServices?.nodes && res?.allServices?.nodes.map( myService => {
+        
+        pathsData.push( { params: { slug: myService.slug } } )
+        // if(myService.length > 0){
+            
+        // }
+    
+    })
+    
     return {
         paths: pathsData,
         fallback: FALLBACK

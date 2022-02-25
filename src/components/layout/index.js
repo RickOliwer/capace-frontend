@@ -8,9 +8,7 @@ import Head from "next/head";
 
 const Layout = ({children, data}) => {
 
-    if(isEmpty(data?.page || data?.singleCase || data?.singleService || data?.singleCareer)){
-        return null
-    }
+
 
     const {page, header, singleCase, singleService, singleCareer, footer, headerMenus, footerMenus} = data || {};
     

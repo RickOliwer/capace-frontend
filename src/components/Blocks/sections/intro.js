@@ -1,5 +1,6 @@
 import isEmpty from "lodash.isempty";
 import { useEffect, useState } from "react";
+import handleParse from "../../../utils/parser";
 import Form from "./form";
 
 const Intro = ( { content, title } ) => {
@@ -30,10 +31,7 @@ const Intro = ( { content, title } ) => {
                                     {!isEmpty(grid?.rubrik) && (
                                         <h3>{grid?.rubrik}</h3>
                                     )}
-                                    <p>{grid?.text}</p>
-                                    {!isEmpty(grid?.avslut) && (
-                                        <p className="mt-4">{grid?.avslut}</p>
-                                    )}
+                                    {handleParse(grid?.text)}
                                 </div>
                             )
                         })}

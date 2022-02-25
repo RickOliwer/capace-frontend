@@ -45,7 +45,30 @@ $oranges: #FF752E;
 body{
     overflow-x: hidden;
 }
+.parsed{
 
+    p{
+        margin-bottom: 17px;
+
+            a{
+                color: $oranges;
+                border-bottom: 2px solid transparent;
+                transition: all ease-in-out .5s;
+
+                &:hover{
+                    border-color: $oranges;
+                }
+                    
+               
+            }
+    }
+
+    h1, h2, h3, h4, h5{
+        font-size: 1.25rem;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+}
 ul.flex-list{
     li{
         list-style: disc !important;
