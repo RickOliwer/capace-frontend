@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
+import isEmpty from "lodash.isempty";
 
-const Form = ( { theServ } ) => {
+const Form = ({title}) => {
     const {register, handleSubmit, reset, formState: { errors }} = useForm()
     const [isSubmitted, setSubmitted] = useState(false)
 
@@ -19,8 +20,9 @@ const Form = ( { theServ } ) => {
         try {
             const response = await axios(config);
             if(response.status == 200){
-                setSubmitted(isSubmitted)
-                console.log(response);
+                setSubmitted(true)
+                reset()
+                
             }
         } catch (error) {
             console.log(error);
@@ -31,16 +33,16 @@ const Form = ( { theServ } ) => {
 
     return (
         <div className="">
-        <h3 className="text-2xl">Vill du veta mer om <span className="text-capace-oranges">{theServ}?</span></h3>
+        <h3 className="text-2xl">Vill du veta mer om <span className="text-capace-oranges">{title}?</span></h3>
         <p>Fyll formuläret nedan så kontaktar vi dig.</p>
         
-        <form onSubmit={handleSubmit(onSubmitForm)} className="my-10 grid gap-3">
-            {isSubmitted ? (
-                <div>Success</div>
+        <form onSubmit={handleSubmit(onSubmitForm)} className="grid gap-3 my-10">
+            {isSubmitted && isEmpty(errors) ? (
+                <div className="w-full px-6 py-4 my-4 text-xl opacity-50 bg-capace-oranges text-capace-light">Meddelande har skickats</div>
             ) : null}
             <input 
                 type="text" 
-                defaultValue={theServ} 
+                defaultValue={title} 
                 name="service" 
                 hidden
                 {...register("service", {
@@ -51,7 +53,7 @@ const Form = ( { theServ } ) => {
                 <div>
                     <label htmlFor="name">Namn</label>
                     <input 
-                    className="block w-full my-3 shadow py-3 px-4 placeholder-gray-500 focus:ring-capace-oranges focus:border-capace-oranges  focus:outline-none focus:ring-2"
+                    className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
                     type="text"
                     {...register("name", {
                         required: {
@@ -80,7 +82,7 @@ const Form = ( { theServ } ) => {
                 </div>
                 <div>
                     <label htmlFor="email">E-mail</label>
-                    <input className="block w-full shadow py-3 px-4 my-3 placeholder-gray-500 focus:ring-capace-oranges focus:border-capace-oranges  focus:outline-none focus:ring-2"
+                    <input className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
                     type="email"
                     {...register("email", {
                         required: {
@@ -103,7 +105,7 @@ const Form = ( { theServ } ) => {
                 </div>
                 <div className="col-span-2">
                     <label htmlFor="phone">Telefon</label>
-                    <input className="block w-full shadow py-3 px-4 my-3 placeholder-gray-500 focus:ring-capace-oranges focus:border-capace-oranges  focus:outline-none focus:ring-2"
+                    <input className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
                     {...register("phone", {
                         minLength: {
                             value: 10,
@@ -129,7 +131,7 @@ const Form = ( { theServ } ) => {
             <div className="grid gap-4">
                 <div>
                     <label htmlFor="message">Lämna ett valfritt meddelande</label>
-                    <textarea className="block w-full shadow py-3 px-4 my-3 placeholder-gray-500 focus:ring-capace-oranges focus:border-capace-oranges  focus:outline-none focus:ring-2"
+                    <textarea className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
                     {...register("message", {
                         required: {
                             value: true,

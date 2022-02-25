@@ -1,13 +1,11 @@
 import Image from "next/image";
 
 const ThirdModule = ( { facts } ) => {
-
-    console.log(facts);
     return (
         <section className="">
             <div className="grid gap-10 md:gap-20 lg:grid-cols-4 md:grid-cols-2">
                 {facts?.map((fact) => {
-                    return <Facts fact={fact} />
+                    return <Facts key={fact?.title} fact={fact} />
                 })}
             </div>
         </section>
