@@ -5,26 +5,40 @@ import Form from "./form";
 
 const Intro = ( { content, title } ) => {
     const [isGrid, setGrid] = useState(false)
+    const gridLength = content?.textGrid.length
+    console.log('grid lenght', gridLength);
 
     useEffect(() => {
         if(!isEmpty(content?.textGrid)){
             setGrid(true)
         }
     }, [content?.textGrid, setGrid])
+    if(isEmpty(content)){
+        return null
+    }
     return (
         <div>
 
             <div className={`layout-top intro-block ${isGrid ? 'grid grid-cols-3 gap-10' : ''}`}>
                 <div className={``}>
                     <h2 className="flex flex-col">
-                        <span className="mb-2 text-2xl lg:text-3xl">{content?.rubrik1}</span>
-                        <span className="text-4xl lg:text-6xl">{content?.rubrik2}<span className="capace-oranges">.</span></span>
+                        {!isEmpty(content?.rubrik1) && (
+                            <span className="mb-2 text-2xl lg:text-5xl">{content?.rubrik1}</span>
+                        )}
+                        {!isEmpty(content?.rubrik2) && (
+                             <span className="mb-2 text-2xl lg:text-5xl">{content?.rubrik2}</span>
+                        )}
+                        {!isEmpty(content?.rubrik3) && (
+                             <span className="text-4xl lg:text-6xl caveat capace-oranges">{content?.rubrik3}.</span>
+                        )}
                     </h2>
 
-                    <p>{content?.utdrag}</p>
+                    {!isEmpty(content?.utdrag) && (
+                        handleParse(content?.utdrag)
+                    )}
                 </div>
                 {!isEmpty(content?.textGrid) && (
-                    <div className="grid grid-cols-2 col-span-2 gap-10 intro-grid">
+                    <div className={`grid col-span-2 gap-10 intro-grid ${gridLength === 2 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                         {content?.textGrid?.map((grid, index) => {
                             return (
                                 <div className="grid-item" key={`#€"%%${index}${grid?.text}`}>

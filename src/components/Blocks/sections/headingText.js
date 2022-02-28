@@ -1,6 +1,9 @@
 import isEmpty from "lodash.isempty";
 
 const HeadingText = ( { content } ) => {
+    if(isEmpty(content)){
+        return null
+    }
     return (
         <div className="layout-top">
             {!isEmpty(content?.rubrik) && (

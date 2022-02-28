@@ -46,6 +46,7 @@ export const GET_SERVICE_BY_URI = gql`
                   fieldGroupName
                   rubrik1
                   rubrik2
+                  rubrik3
                   utdrag
                   textGrid {
                     rubrik
