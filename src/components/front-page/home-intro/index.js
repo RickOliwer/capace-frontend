@@ -1,10 +1,13 @@
 import isEmpty from "lodash.isempty";
 import Image from "next/image";
 import Link from "next/link";
+import { BackgroundColor } from "../../Blocks/functions/bg";
 const HomeIntro = ( { intro } ) => {
     let headingTwo = intro[0].heading
     const newHeadingTwo = headingTwo.split(' ')
     return (
+        <>
+        <BackgroundColor bg="white" color="" />
         <section className="grid grid-cols-2 lg:grid-cols-5 lg:gap-36">
             <div className="col-span-2 font-light lg:col-span-2 text-capace-dark py-28">
                 <h2 className="text-5xl lg:text-7xl page_title">
@@ -39,6 +42,7 @@ const HomeIntro = ( { intro } ) => {
 
             </div>
         </section>
+        </>
     );
 }
  

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BackgroundColor } from "../../Blocks/functions/bg";
 import { Facebook, FooterImg, Instagram, Linkedin } from "../../icons";
 
 const Footer = ({ footer, footerMenus }) => {
@@ -7,6 +8,7 @@ const Footer = ({ footer, footerMenus }) => {
     return (
         <footer className=" text-capace-light">
             <FooterImg />
+            <BackgroundColor bg="white" color="" />
             <div className="bg-capace-dark">
                 <div className="grid grid-cols-1 gap-20 py-10 layout lg:grid-cols-3">
                     <div className="">

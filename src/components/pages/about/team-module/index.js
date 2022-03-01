@@ -1,12 +1,12 @@
 import Card from '../../modules/card';
 const AboutTeam = ({ team }) => {
-    
+
     return ( 
         <div className="my-6 md:my-10 lg:my-28">
-            <div className="lg:text-7xl text-5xl">
+            <div className="text-5xl lg:text-7xl">
                 <h2>{team[0]?.heading} <span className="capace-oranges">.</span></h2>
             </div>
-            <div className='lg:grid lg:grid-cols-2 gap-10'>
+            <div className='gap-10 lg:grid lg:grid-cols-2'>
                 {
                     team?.map((teams) => {
                         return teams?.team?.map((post) => {

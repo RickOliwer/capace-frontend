@@ -45,6 +45,7 @@ $oranges: #FF752E;
 $overlay: #ff742e68;
 body{
     overflow-x: hidden;
+    transition: .3s ease-in-out;
 }
 .parsed{
 
@@ -88,9 +89,9 @@ ul.flex-list{
 
 .border-text{
     color: $oranges;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-fill-color: $oranges; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 2.5px;
-    -webkit-text-stroke-color: $oranges;
+    -webkit-text-stroke-color: white;
 }
 .capace-oranges{
     color: #FF752E;

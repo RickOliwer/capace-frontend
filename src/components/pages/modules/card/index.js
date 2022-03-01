@@ -1,6 +1,7 @@
 import isEmpty from "lodash.isempty";
 import Image from "next/image";
 import Link from "next/link"
+import { BackgroundColor } from "../../../Blocks/functions/bg";
 
 const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
     return ( 
@@ -9,7 +10,8 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
             {
                 isEmpty(link) ? (
                     <>
-                    <div className="mb-6 relative h-screen">
+                    <div className="relative h-screen mb-6">
+                        <BackgroundColor bg="#191919" color="white" />
                         <Image 
                             layout="fill"
                             objectFit='cover'
@@ -21,13 +23,13 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
                     
                     <div>
                         {!isEmpty(first) ? (
-                            <p className='capace-oranges mb-3 text-lg'>{first}</p>
+                            <p className='mb-3 text-lg capace-oranges'>{first}</p>
                         ) : null}
                         {!isEmpty(serv) ? (
                             <p className='mb-3 text-lg'>{serv}</p>
                         ) : null}
                         {!isEmpty(second) ? (
-                            <p className="text-3xl font-bold mb-3">{second} <span className='capace-oranges'>.</span></p>
+                            <p className="mb-3 text-3xl font-bold">{second} <span className='capace-oranges'>.</span></p>
                         ) : null}
                         {!isEmpty(third) ? (
                             <p className='text-lg capace-oranges'>{third}</p>
@@ -38,7 +40,8 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
                         
                         <Link href={link}>
                             <a>
-                                <div className="mb-6 relative h-screen">
+                                <div className="relative h-screen mb-6">
+                                <BackgroundColor bg="#191919" color="white" />
                                     <Image 
                                         layout="fill"
                                         objectFit='cover'
@@ -50,13 +53,13 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
                                 
                                 <div>
                                 {!isEmpty(first) ? (
-                                    <p className='capace-oranges mb-3 text-lg'>{first}</p>
+                                    <p className='mb-3 text-lg capace-oranges'>{first}</p>
                                 ) : null}
                                 {!isEmpty(serv) ? (
                                     <p className='mb-3 text-lg'>{serv}</p>
                                 ) : null}
                                 {!isEmpty(second) ? (
-                                    <p className="text-3xl font-bold mb-3">{second} <span className='capace-oranges'>.</span></p>
+                                    <p className="mb-3 text-3xl font-bold">{second} <span className='capace-oranges'>.</span></p>
                                 ) : null}
                                 {!isEmpty(third) ? (
                                     <p className='text-lg capace-oranges'>{third}</p>
