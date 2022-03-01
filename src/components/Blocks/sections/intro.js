@@ -20,8 +20,8 @@ const Intro = ( { content, title } ) => {
         <div>
 
             <div className={`layout-top intro-block ${isGrid ? 'grid grid-cols-3 gap-10' : ''}`}>
-                <div className={``}>
-                    <h2 className="flex flex-col">
+                <div className={`pr-10`}>
+                    <h2 className="flex flex-col pb-10">
                         {!isEmpty(content?.rubrik1) && (
                             <span className="mb-2 text-2xl lg:text-5xl">{content?.rubrik1}</span>
                         )}

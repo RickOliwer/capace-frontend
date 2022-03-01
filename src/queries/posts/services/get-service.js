@@ -85,6 +85,7 @@ export const GET_SERVICE_BY_URI = gql`
                     ... on GQLCase {
                       id
                       uri
+                      title
                       featuredImage {
                         node {
                           altText

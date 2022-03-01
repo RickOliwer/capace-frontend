@@ -40,8 +40,9 @@
     font-weight: 700;
     font-display: swap;
 }
-$black: #2e2e2e;
+$black: #191919;
 $oranges: #FF752E;
+$overlay: #ff742e68;
 body{
     overflow-x: hidden;
 }
@@ -187,7 +188,26 @@ p, span, a{
     &:nth-child(odd){
         margin-top: 80px;
     }
+
+    .team-card-img{
+        transition: ease-in-out .3s;
+        
+            .overlay{
+                transition: ease-in-out .3s;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                &:hover{
+                    background-color: $overlay;
+                }
+            }
+    }
 }
+
+
 
 
 @import 'layout/nav';
