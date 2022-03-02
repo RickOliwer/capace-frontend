@@ -29,7 +29,7 @@ const Page = ({ data, response }) => {
             {!isEmpty(data?.singleService) && (
                 <>
                     <Hero hero={data?.singleService} logo={data?.header?.siteLogoUrl} />
-                    <Blocks block={data?.singleService?.GQL_servicesContent} pageTitle={data?.singleService?.title} />
+                    <Blocks block={data?.singleService?.GQL_Flexible_Content} pageTitle={data?.singleService?.title} />
                 </>
             )}
         </>

@@ -1,13 +1,5 @@
 export const FrontPage = `
-homeIntro {
-    heading
-    excerpt
-    text
-    image {
-      altText
-      mediaItemUrl
-    }
-  }
+
   homeServices {
     heading
     excerpt

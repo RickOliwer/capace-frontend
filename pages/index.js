@@ -1,5 +1,6 @@
 
 import Client from '../src/apollo/client';
+import Blocks from '../src/components/Blocks';
 import FrontPage from '../src/components/front-page';
 //import Layout from '../src/components/layout';
 import Hero from '../src/components/layout/header/hero';
@@ -16,6 +17,8 @@ export default function Home({ data }) {
     <>
      
       <Hero hero={data?.page} logo={data?.header?.siteLogoUrl} />
+
+      <Blocks block={data?.page?.GQL_Flexible_Content} pageTitle={data?.page?.title}/>
       
       <FrontPage template={data?.page?.pageContent} />
     </>

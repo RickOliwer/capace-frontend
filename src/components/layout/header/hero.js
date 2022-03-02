@@ -2,6 +2,7 @@ import Image from 'next/image'
 import isEmpty from "lodash.isempty"
 import RCTypeWriting from '../../typewriting';
 import Link from 'next/link';
+import { BackgroundColor } from '../../Blocks/functions/bg';
 
 
 const Hero = ({ hero, logo }) => {

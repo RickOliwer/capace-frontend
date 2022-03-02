@@ -45,7 +45,7 @@ $oranges: #FF752E;
 $overlay: #ff742e68;
 body{
     overflow-x: hidden;
-    transition: .3s ease-in-out;
+    transition: all ease-in-out .3s;
 }
 .parsed{
 
@@ -114,8 +114,8 @@ ul.flex-list{
     cursor: pointer;
         &:hover{
             transform: scale(1.07);
-            color: $oranges;
-            border: 1px solid $oranges;
+            // color: $oranges;
+            // border: 1px solid $oranges;
 
         }
 }

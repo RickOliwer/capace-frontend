@@ -40,20 +40,47 @@ export const GET_SERVICE_BY_URI = gql`
                 mediaItemUrl
               }
             }
-            GQL_servicesContent {
+            GQL_Flexible_Content {
               sektion {
-                ... on GqlService_GqlServicescontent_Sektion_Intro {
+                ... on GqlService_GqlFlexibleContent_Sektion_Intro {
                   fieldGroupName
                   rubrik1
                   rubrik2
                   rubrik3
                   utdrag
+                  knapp {
+                    text
+                    url {
+                      ... on Page {
+                        id
+                        uri
+                      }
+                      ... on GQLCareer {
+                        id
+                        uri
+                      }
+                      ... on GqlService {
+                        id
+                        uri
+                      }
+                      ... on GQLCase {
+                        id
+                        uri
+                      }
+                    }
+                  }
+                  installningar
+                  bild {
+                    altText
+                    id
+                    mediaItemUrl
+                  }
                   textGrid {
                     rubrik
                     text
                   }
                 }
-                ... on GqlService_GqlServicescontent_Sektion_Blurbs {
+                ... on GqlService_GqlFlexibleContent_Sektion_Blurbs {
                   fieldGroupName
                   blurb {
                     ikon {
@@ -65,7 +92,7 @@ export const GET_SERVICE_BY_URI = gql`
                     text
                   }
                 }
-                ... on GqlService_GqlServicescontent_Sektion_KortInfo {
+                ... on GqlService_GqlFlexibleContent_Sektion_KortInfo {
                   fieldGroupName
                   kort {
                     bild {
@@ -77,7 +104,7 @@ export const GET_SERVICE_BY_URI = gql`
                     text
                   }
                 }
-                ... on GqlService_GqlServicescontent_Sektion_Cases {
+                ... on GqlService_GqlFlexibleContent_Sektion_Cases {
                   fieldGroupName
                   rubrik
                   text

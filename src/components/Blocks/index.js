@@ -24,18 +24,20 @@ export const Block = ( { section, title } ) => {
         case "GQLCareer_GqlFlexiblecareer_Sektion_HeadingText":
             return <HeadingText content={section} />
             break;
-        case "GqlService_GqlServicescontent_Sektion_Intro":
+        case "GqlService_GqlFlexibleContent_Sektion_Intro":
             return <Intro content={section} title={title} />
             break;
-        case "GqlService_GqlServicescontent_Sektion_Blurbs":
+        case "GqlService_GqlFlexibleContent_Sektion_Blurbs":
             return <Blurb content={section} />
             break;
-        case "GqlService_GqlServicescontent_Sektion_KortInfo":
+        case "GqlService_GqlFlexibleContent_Sektion_KortInfo":
             return <CardInfo content={section} />
             break;
-        case "GqlService_GqlServicescontent_Sektion_Cases":
+        case "GqlService_GqlFlexibleContent_Sektion_Cases":
             return <Cases content={section} />
             break;
+        case "Page_GqlFlexibleContent_Sektion_Intro":
+            return <Intro content={section} />
         default:
             return  <div>{section.fieldGroupName}</div>;
             break;

@@ -44,7 +44,7 @@ const HomeCase = ( { cases, customers } ) => {
                 }
             </div>
             <div className="my-6 md:my-10 lg:my-28">
-                <BackgroundColor bg="black" color="white" />
+                <BackgroundColor bg="#191919" color="white" />
 
                 <div>
                     <h2 className="text-5xl lg:text-7xl">{customers[0]?.heading}<span className="capace-oranges">.</span></h2>
