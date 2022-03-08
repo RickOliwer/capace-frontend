@@ -1,3 +1,5 @@
+import { BackgroundColor } from "../../../Blocks/functions/bg";
+
 const AboutIntro = ({intro}) => {
     let headingTwo = intro[0].headingOne
     const newHeadingTwo = headingTwo.split(' ')
@@ -5,7 +7,8 @@ const AboutIntro = ({intro}) => {
     return ( 
         <div className="lg:grid lg:grid-cols-5 lg:gap-36">
             <section className="lg:col-span-2">
-                <h2 className="lg:text-7xl text-5xl page_title">
+            <BackgroundColor bg="" color="" />
+                <h2 className="text-5xl lg:text-7xl page_title">
                     {
                         newHeadingTwo.map((h, index) => {
                             return <div key={`${index}aboutTitle`}>{h}</div>
@@ -14,7 +17,7 @@ const AboutIntro = ({intro}) => {
                     }
                 </h2>
             </section>
-            <section className="lg:col-span-3 grid gap-10">
+            <section className="grid gap-10 lg:col-span-3">
                 <div>
                     {
                         intro?.map((text, index) => {
@@ -25,7 +28,7 @@ const AboutIntro = ({intro}) => {
                         })
                     }
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid gap-4 md:grid-cols-2">
                     {
                         intro?.map((intro) => {
                             return intro?.subHeading?.map((sub) => {

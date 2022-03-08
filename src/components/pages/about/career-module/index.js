@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image';
 import isEmpty from "lodash.isempty"
+import { BackgroundColor } from '../../../Blocks/functions/bg';
 
 const AboutCareer = ({ career }) => {
     return ( 
         <div className="my-6 md:my-10 lg:my-28">
             <section className="text-5xl lg:text-7xl">
+            <BackgroundColor bg="" color="" />
                 <h2>{career[0]?.heading}<span className="capace-oranges">.</span></h2>
                 <p className="text-lg">{career[0]?.excerpt}</p>
             </section>

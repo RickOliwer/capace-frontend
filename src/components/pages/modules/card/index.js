@@ -34,6 +34,7 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
                         {!isEmpty(third) ? (
                             <p className='text-lg capace-oranges'>{third}</p>
                         ) : null}
+                        <BackgroundColor bg="#191919" color="white" />
                     </div>
                     </>
                     ) : (

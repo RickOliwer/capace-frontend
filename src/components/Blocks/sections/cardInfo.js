@@ -1,6 +1,7 @@
 import isEmpty from "lodash.isempty";
 import Image from "next/image";
 import handleParse from "../../../utils/parser";
+import { BackgroundColor } from "../functions/bg";
 
 const CardInfo = ({ content }) => {
     const cardLenght = content?.kort?.length
@@ -14,6 +15,7 @@ const CardInfo = ({ content }) => {
                     <div key={item?.rubrik}>
                         {!isEmpty(item?.bild?.mediaItemUrl) && (
                             <div className="relative w-full h-50vh">
+                                <BackgroundColor bg="#191919" color="white" />
                                 <Image 
                                     layout="fill"
                                     objectFit="cover"
@@ -27,6 +29,7 @@ const CardInfo = ({ content }) => {
                             <h2 className="text-2xl">{item?.rubrik}</h2>
                             {handleParse(item?.text)}
                         </div>
+                        <BackgroundColor bg="#191919" color="white" />
                     </div>
                 )
             })}

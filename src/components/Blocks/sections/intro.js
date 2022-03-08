@@ -24,7 +24,7 @@ const Intro = ( { content, title } ) => {
                 <SettingEmpty content={content} title={title}/>
             )}
             
-
+            <BackgroundColor bg="" color="" />
         </div>
     );
 }

@@ -3,6 +3,7 @@ import Image from "next/image"
 import find from "../../../../../public/hitta.gif"
 import phone from "../../../../../public/telefon.gif"
 import mail from "../../../../../public/mejla.gif"
+import { BackgroundColor } from "../../../Blocks/functions/bg"
 
 const ContactIntro = ( { intro } ) => {
     const address = []
@@ -12,8 +13,9 @@ const ContactIntro = ( { intro } ) => {
         })
     })
     return (
-        <section className="my-6 md:my-10 lg:my-28 lg:grid lg:grid-cols-4 gap-10">
-            <div className="lg:text-7xl text-5xl md:my-10 lg:my-28">
+        <section className="gap-10 my-6 md:my-10 lg:my-28 lg:grid lg:grid-cols-4">
+            <div className="text-5xl lg:text-7xl md:my-10 lg:my-28">
+                <BackgroundColor bg="" color="" />
                 <h2>{intro[0]?.heading}<span className="capace-oranges">.</span></h2>
                 <p className="text-lg">{intro[0]?.text}</p>
             </div>
