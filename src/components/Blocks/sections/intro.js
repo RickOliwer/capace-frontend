@@ -12,7 +12,6 @@ const Intro = ( { content, title } ) => {
     if(isEmpty(content)){
         return null
     }
-    console.log('my content', content);
     return (
         <div>
             <BackgroundColor bg="" color="" />

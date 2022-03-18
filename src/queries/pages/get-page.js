@@ -5,7 +5,6 @@ import SeoFragment from "../fragments/seo";
 import { CasePage } from "./get-casepage";
 import { ContactPage } from "./get-contact";
 import { ServicesPage } from "./get-service";
-import { FrontPage } from "./get-frontpage";
 
 
 
@@ -27,7 +26,6 @@ export const GET_PAGE = gql`
 			${CasePage}
 			${ContactPage}
 			${ServicesPage}
-			${FrontPage}
 		}
 		GQL_Flexible_Content {
 			sektion {
@@ -67,6 +65,32 @@ export const GET_PAGE = gql`
 				textGrid {
 				  rubrik
 				  text
+				}
+			  }
+			  ... on Page_GqlFlexibleContent_Sektion_Kunder {
+				fieldGroupName
+				rubrik
+				logotyper {
+					logo{
+						altText
+				  		id
+				  		mediaItemUrl
+					}
+				}
+			  }
+			  ... on Page_GqlFlexibleContent_Sektion_Sidmarkering {
+				fieldGroupName
+				rubrik
+				text
+				taggar
+				knapp {
+					text
+					url {
+						... on Page{
+						id
+						uri
+						}
+					}
 				}
 			  }
 			  ... on Page_GqlFlexibleContent_Sektion_Blurbs {

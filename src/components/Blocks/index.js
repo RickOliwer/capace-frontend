@@ -3,6 +3,8 @@ import CardInfo from "./sections/cardInfo";
 import Cases from "./sections/cases";
 import HeadingText from "./sections/headingText";
 import Intro from "./sections/intro";
+import Kunder from "./sections/Kunder";
+import Sidmarkering from "./sections/Sidmarkering";
 
 const Blocks = ( { block, pageTitle } ) => {
     return (
@@ -38,6 +40,16 @@ export const Block = ( { section, title } ) => {
             break;
         case "Page_GqlFlexibleContent_Sektion_Intro":
             return <Intro content={section} />
+            break;
+        case "Page_GqlFlexibleContent_Sektion_Sidmarkering":
+            return <Sidmarkering content={section} />
+            break;
+        case "Page_GqlFlexibleContent_Sektion_Cases":
+            return <Cases content={section} />
+            break;
+        case "Page_GqlFlexibleContent_Sektion_Kunder":
+            return <Kunder content={section} />
+            break;
         default:
             return  <div>{section.fieldGroupName}</div>;
             break;

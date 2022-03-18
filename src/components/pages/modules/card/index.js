@@ -42,7 +42,6 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
                         <Link href={link}>
                             <a>
                                 <div className="relative h-screen mb-6">
-                                <BackgroundColor bg="#191919" color="white" />
                                     <Image 
                                         layout="fill"
                                         objectFit='cover'

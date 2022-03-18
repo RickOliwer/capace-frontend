@@ -17,7 +17,7 @@ export const useBgBlack = (bgBlack) => {
     }
 
     useEffect(() => {
-        //console.log('bgBlack',bgBlack);
+
         if(bgBlack && bgBlack.current && bgBlack.current.offsetTop) {
             window.addEventListener('scroll', () =>handleScroll(bgBlack))
             }
