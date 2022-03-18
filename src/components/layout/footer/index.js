@@ -57,12 +57,12 @@ const Footer = ({ footer, footerMenus }) => {
                     </div>
                 </div>
                 <div className="flex flex-col justify-between py-10 text-center md:text-left md:flex-row layout">
-                    <div className="mb-10  md:mb-0">© 2022 - Capace Media Group AB</div>
+                    <div className="mb-10 md:mb-0">© 2022 - Capace Media Group AB</div>
                     <div className="">Cookies Integritetspolicy</div>
 
                 </div>
             </div>
-
+            <BackgroundColor bg="white" color="" />
         </footer>
     )
 }
