@@ -10,7 +10,7 @@ const Blurb = ( { content } ) => {
         return null
     }
     return (
-        <div className={`grid layout-top grid-cols-1 gap-20 ${blurbLenght === 1 ? 'grid-cols-1 md:px-24 lg:px-40' : blurbLenght == 2 ? 'md:grid-cols-2' : blurbLenght == 3 ? 'md:grid-cols-3' : blurbLenght == 6 ? 'lg:grid-cols-3' : 'lg:grid-cols-4 md:grid-cols-2'}`}>
+        <div className={`grid layout-top contain grid-cols-1 gap-20 ${blurbLenght === 1 ? 'grid-cols-1 md:px-24 lg:px-40' : blurbLenght == 2 ? 'md:grid-cols-2' : blurbLenght == 3 ? 'md:grid-cols-3' : blurbLenght == 6 ? 'lg:grid-cols-3' : 'lg:grid-cols-4 md:grid-cols-2'}`}>
             {content?.blurb?.map((item) => {
                 return (
                     <div key={item?.rubrik + item?.text}>

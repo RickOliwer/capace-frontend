@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.layout-top{
-    @apply mt-6 md:mt-10 lg:mt-28;
-}
 
-.layout{
-    @apply mx-6 md:mx-10 lg:mx-28;
+@layer components {
+    .contain {
+        @apply w-full mx-auto xl:w-full xl:max-w-screen-xl;
+    }
+    .layout-top{
+        @apply mt-6 md:mt-10 lg:mt-28;
+    }
+    
+    .layout{
+        @apply mx-6 md:mx-10 lg:mx-28 2xl:px-0;
+    }
 }

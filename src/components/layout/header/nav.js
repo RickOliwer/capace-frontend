@@ -80,6 +80,7 @@ const Nav = ({ header, headerMenus }) => {
 
     
     return ( 
+        
         <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg fixed z-40 w-16 h-14 md:right-6 md:top-6 right-2 top-2 transition duration-1000 ease-in-out button-center`}>
 
                 <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'click' : '' } nav_button`} id="nav_button">

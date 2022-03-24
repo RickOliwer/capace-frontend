@@ -5,7 +5,7 @@ import { BackgroundColor } from "../functions/bg";
 
 const Sidmarkering = ({content}) => {
     return (
-        <section className="my-64 text-center ">
+        <section className="my-64 text-center contain ">
             <h2 className="text-5xl lg:text-9xl text-capace-oranges border-text">{content?.rubrik}</h2>
             {handleParse(content?.text)}
             <BackgroundColor bg="#FF752E" color="white" />

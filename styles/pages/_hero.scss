@@ -1,14 +1,23 @@
 .hero{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($color: $black, $alpha: 0.5);
+        }
         .overlay{
             position: absolute;
             height: 100%;
-            width: 100%;
             top: 0;
-            left: 0;
-            background: rgba($color: $black, $alpha: 0.5);
+            left: 50%;
+            transform: translateX(-50%);
+            
                 div{
                     h1{
                         .start-heading1{

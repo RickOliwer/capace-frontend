@@ -9,7 +9,7 @@ const Cases = ({content}) => {
         return null
     }
     return (
-        <div className="layout-top background_black">
+        <div className="layout-top background_black contain">
             <h2 className="text-5xl uppercase lg:text-7xl">{content.rubrik}<span className="text-capace-oranges">.</span></h2>
             {!isEmpty(content.text) && (
                 <p>{text}</p>

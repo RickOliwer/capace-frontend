@@ -5,7 +5,7 @@ import { BackgroundColor } from "../functions/bg";
 const Kunder = ({content}) => {
 
     return (
-        <section className="layout-top">
+        <section className="layout-top contain">
             <BackgroundColor bg="#191919" color="white" />
             <h2 className="text-5xl lg:text-7xl">{content?.rubrik}<span className="capace-oranges">.</span></h2>
             <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2">

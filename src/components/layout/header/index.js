@@ -6,7 +6,7 @@ const Header = ({header, headerMenus, page}) => {
         return null;
     }
     return ( 
-        <header className="w-full">
+        <header className="contain">
                 <Nav header={header} headerMenus={headerMenus} />
         </header>
     );

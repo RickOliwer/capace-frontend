@@ -9,7 +9,7 @@ const CardInfo = ({ content }) => {
         return null
     }
     return (
-        <div className={`grid layout-top grid-cols-1 gap-10 ${cardLenght > 1 ? 'md:grid-cols-2' : ''}`}>
+        <div className={`grid layout-top contain grid-cols-1 gap-10 ${cardLenght > 1 ? 'md:grid-cols-2' : ''}`}>
             {content?.kort?.map((item) => {
                 return (
                     <div key={item?.rubrik}>

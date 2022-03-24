@@ -13,7 +13,7 @@ const Intro = ( { content, title } ) => {
         return null
     }
     return (
-        <div>
+        <div className="contain">
             <BackgroundColor bg="" color="" />
             {content?.installningar == "bild" ? (
                 <SettingImg content={content} title={title} />
