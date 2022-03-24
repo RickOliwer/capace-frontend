@@ -2,7 +2,6 @@ import { gql } from "@apollo/client";
 import {HeaderFooter} from "../get-menus";
 import { AboutPage } from "./get-about";
 import SeoFragment from "../fragments/seo";
-import { CasePage } from "./get-casepage";
 import { ContactPage } from "./get-contact";
 import { ServicesPage } from "./get-service";
 
@@ -23,12 +22,40 @@ export const GET_PAGE = gql`
 		pageContent {
 			pageTemplate
 			${AboutPage}
-			${CasePage}
 			${ContactPage}
 			${ServicesPage}
 		}
 		GQL_Flexible_Content {
 			sektion {
+				... on Page_GqlFlexibleContent_Sektion_Kundcase{
+					fieldGroupName
+					projekt {
+						... on GQLCase {
+						  id
+						  title
+						  uri
+						  featuredImage {
+							node {
+							  altText
+							  mediaItemUrl
+							}
+						  }
+						  GQL_casesContent {
+							tjanster {
+							  services
+							}
+						  }
+						  gQLCaseCategories {
+							edges {
+							  node {
+								id
+								name
+							  }
+							}
+						  }
+						}
+					  }
+				}
 			  ... on Page_GqlFlexibleContent_Sektion_Intro {
 				fieldGroupName
 				rubrik1

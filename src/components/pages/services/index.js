@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import isEmpty from "lodash.isempty"
+import { BackgroundColor } from "../../Blocks/functions/bg"
 
 const ServicePage = ( { servicePage } ) => {
     const myServ = []
@@ -14,7 +15,10 @@ const ServicePage = ( { servicePage } ) => {
     let title = theTitle.split(" ");
 
     return (
-        <div className="services_wrapper">
+        <>
+        
+        <BackgroundColor bg="" color="" />
+        <div className="services_wrapper contain">
             <div className="title-container">
                 <h2 className="text-5xl lg:text-7xl service-title">
                     {title?.map((t) => {
@@ -40,6 +44,7 @@ const ServicePage = ( { servicePage } ) => {
                     </a></Link></div>
             })}
         </div>
+        </>
     );
 }
  

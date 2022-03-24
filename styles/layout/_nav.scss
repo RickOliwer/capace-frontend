@@ -136,11 +136,11 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-            height: 65vh;
+            height: 60vh;
             position: absolute;
-            left: 20%;
+            left: 16%;
             top: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateY(-50%);
 
                 .child_link{
                     display: flex;

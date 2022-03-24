@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SecondSection = ( { secondSection } ) => {
     return ( 
-        <section className="my-6 md:my-10 lg:my-28">
+        <section className="my-6 md:my-10 lg:my-28 contain">
             <h2 className="text-5xl lg:text-7xl">{secondSection?.slutresultat[0]?.slutresultatTitle}<span className="text-capace-oranges">.</span></h2>
             <p className="mb-10 font-light">{secondSection?.slutresultat[0]?.slutresultatText}</p>
 

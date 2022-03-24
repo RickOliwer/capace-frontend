@@ -1,13 +1,13 @@
+import Card from "../../pages/modules/card"
 import { useState } from "react";
-import Card from "../../modules/card";
 
-
-const Case = ({ cases, taxMenu}) => {
+const Kundcase = ({content, taxMenu}) => {
     const myProjects = []
-    cases.map((q)=>{
-        q.projects.map((r) =>{
-            myProjects.push(r)
-        })
+
+    console.log('content ====>', content);
+    content?.projekt?.map((q)=>{
+            myProjects.push(q)
+
     })
 
     
@@ -19,7 +19,7 @@ const Case = ({ cases, taxMenu}) => {
 
 
     return (
-        <div>
+        <div className="contain">
             <div className="p-40 ">
                 <ul className="flex justify-between">
                     {
@@ -71,6 +71,5 @@ const Case = ({ cases, taxMenu}) => {
         </div>
     );
 }
-
  
-export default Case;
+export default Kundcase;

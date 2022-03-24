@@ -3,14 +3,15 @@ import CardInfo from "./sections/cardInfo";
 import Cases from "./sections/cases";
 import HeadingText from "./sections/headingText";
 import Intro from "./sections/intro";
+import Kundcase from "./sections/Kundcase";
 import Kunder from "./sections/Kunder";
 import Sidmarkering from "./sections/Sidmarkering";
 
-const Blocks = ( { block, pageTitle } ) => {
+const Blocks = ( { block, pageTitle, catergories } ) => {
     return (
         <main className="layout">
             {block?.sektion?.map((block, index) => {
-                return <Block key={`block${index}`} section={block} title={pageTitle}/>
+                return <Block key={`block${index}`} section={block} title={pageTitle} tax={catergories}/>
             })}
         </main>
     );
@@ -18,7 +19,7 @@ const Blocks = ( { block, pageTitle } ) => {
  
 export default Blocks;
 
-export const Block = ( { section, title } ) => {
+export const Block = ( { section, title, tax } ) => {
     switch (section.fieldGroupName) {
         case "GQLCareer_GqlFlexiblecareer_Sektion_Intro":
             return <Intro content={section} />
@@ -49,6 +50,9 @@ export const Block = ( { section, title } ) => {
             break;
         case "Page_GqlFlexibleContent_Sektion_Kunder":
             return <Kunder content={section} />
+            break;
+        case "Page_GqlFlexibleContent_Sektion_Kundcase":
+            return <Kundcase content={section} taxMenu={tax} />
             break;
         default:
             return  <div>{section.fieldGroupName}</div>;

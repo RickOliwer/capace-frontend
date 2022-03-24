@@ -80,73 +80,78 @@ const Nav = ({ header, headerMenus }) => {
 
     
     return ( 
-        
-        <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg fixed z-40 w-16 h-14 md:right-6 md:top-6 right-2 top-2 transition duration-1000 ease-in-out button-center`}>
+        <div className='fixed z-40 contain'>
 
-                <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'click' : '' } nav_button`} id="nav_button">
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                    <span className="line"></span>
-                </div>
+            <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg absolute z-40 w-16 h-14 md:right-6 xl:right-0 md:top-6 right-2 top-2 transition duration-1000 ease-in-out button-center`}>
 
-
-
-                {headerMenus?.length ? (
-                    <div className={`${isOpen ? 'items_active' : '' } link_items bg-capace`}>
-                        <div ref={logo} className='absolute opacity-0 md:top-10 md:left-10 top-4 left-4'>
-                            {!isEmpty(header?.siteLogoUrl) ? (
-                                        <div className='relative w-16 h-16 md:w-36 md:h-36'>
-                                            <Image 
-                                                layout="fill"
-                                                objectFit='contain'
-                                                alt="site logo"
-                                                src={header?.siteLogoUrl}
-                                                priority
-                                            />
-                                        </div>
-                            ) : null}
-                        </div>
-                        <div className="item-position">
-                            {headerMenus?.map( menu => (
-                            
-                                isEmpty(menu?.node?.childItems?.edges) 
-                                ? 
-                                    <Link key={menu?.node?.id} href={menu?.node?.path}>
-                                        <a className='text-2xl hover:text-capace-oranges' onClick={() => setIsOpen(!isOpen)}>{menu?.node?.label}</a>
-                                    </Link>
-                                : 
-
-                                    <div key={menu?.node?.id} className='child_link'>
-                                        <p  onClick={() => setDropped(!isDropped)} className={`${isDropped ? 'services' : '' } text-2xl cursor-pointer`}>{menu?.node?.label}</p>
-                                        <div  className={`${isDropped} child_items`}>
-
-                                            {menu?.node?.childItems?.edges.map((child, index) => {
-                                                
-                                                return <li key={child.node.id} ref={(e) => createLinksRefs(e, index)}>
-                                                            <Link href={child?.node.path}>
-                                                                <a 
-                                                                    onClick={() => setIsOpen(!isOpen)} 
-                                                                    className="text-base"
-                                                                >
-                                                                    {child?.node.label}
-                                                                </a>
-                                                            </Link>
-                                                        </li>
-                                            })}
-                                            
-                                        </div>
-                                    </div>
-                
-                            ))}
-
-                        </div>
+                    <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'click' : '' } nav_button`} id="nav_button">
+                        <span className="line"></span>
+                        <span className="line"></span>
+                        <span className="line"></span>
+                        <span className="line"></span>
                     </div>
+
+
+
+                    {headerMenus?.length ? (
+                        <div className={`${isOpen ? 'items_active' : '' } link_items bg-capace`}>
+                            <div className='relative h-full contain'>
+
+                                <div ref={logo} className='absolute opacity-0 md:top-10 md:left-10 top-4 left-4'>
+                                    {!isEmpty(header?.siteLogoUrl) ? (
+                                                <div className='relative w-16 h-16 md:w-36 md:h-36'>
+                                                    <Image 
+                                                        layout="fill"
+                                                        objectFit='contain'
+                                                        alt="site logo"
+                                                        src={header?.siteLogoUrl}
+                                                        priority
+                                                    />
+                                                </div>
+                                    ) : null}
+                                </div>
+                                <div className="item-position">
+                                    {headerMenus?.map( menu => (
+                                    
+                                        isEmpty(menu?.node?.childItems?.edges) 
+                                        ? 
+                                            <Link key={menu?.node?.id} href={menu?.node?.path}>
+                                                <a className='text-lg lg:text-2xl hover:text-capace-oranges' onClick={() => setIsOpen(!isOpen)}>{menu?.node?.label}</a>
+                                            </Link>
+                                        : 
+
+                                            <div key={menu?.node?.id} className='child_link'>
+                                                <p  onClick={() => setDropped(!isDropped)} className={`${isDropped ? 'services' : '' } lg:text-2xl text-lg cursor-pointer`}>{menu?.node?.label}</p>
+                                                <div  className={`${isDropped} child_items`}>
+
+                                                    {menu?.node?.childItems?.edges.map((child, index) => {
+                                                        
+                                                        return <li key={child.node.id} ref={(e) => createLinksRefs(e, index)}>
+                                                                    <Link href={child?.node.path}>
+                                                                        <a 
+                                                                            onClick={() => setIsOpen(!isOpen)} 
+                                                                            className="text-base"
+                                                                        >
+                                                                            {child?.node.label}
+                                                                        </a>
+                                                                    </Link>
+                                                                </li>
+                                                    })}
+                                                    
+                                                </div>
+                                            </div>
+                        
+                                    ))}
+
+                                </div>
+                            </div>
+                        </div>
+                    
+                    ) : null}
                 
-                ) : null}
-            
- 
-        </nav>
+    
+            </nav>
+        </div>
                      
     );
 }

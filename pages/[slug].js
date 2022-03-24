@@ -20,6 +20,7 @@ const Page = ({ data, response }) => {
             {!isEmpty(data?.page) && (
                 <>
                     <Hero hero={data?.page} logo={data?.header?.siteLogoUrl}/>
+                    <Blocks block={data?.page?.GQL_Flexible_Content} pageTitle={data?.page?.title} catergories={response?.data?.catergories?.edges}/>
         
                     <Pages template={data?.page?.pageContent} catergories={response?.data?.catergories?.edges} />
                 

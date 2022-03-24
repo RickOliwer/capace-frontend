@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const FirstSection = ( {firstSection} ) => {
     return (
-        <section className="grid gap-10 md:gap-20 md:grid-cols-2">
+        <section className="grid gap-10 md:gap-20 md:grid-cols-2 contain">
                 <div className="">
                     <h2 className="text-5xl lg:text-7xl">{firstSection?.case[0]?.caseTitle}<span className="text-capace-oranges">.</span></h2>
                     <p className="mb-10 font-light">{firstSection?.case[0]?.caseExcerpt}</p>

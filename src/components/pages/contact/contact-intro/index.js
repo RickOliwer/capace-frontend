@@ -13,7 +13,7 @@ const ContactIntro = ( { intro } ) => {
         })
     })
     return (
-        <section className="gap-10 my-6 md:my-10 lg:my-28 lg:grid lg:grid-cols-4">
+        <section className="gap-10 my-6 md:my-10 lg:my-28 lg:grid lg:grid-cols-4 contain">
             <div className="text-5xl lg:text-7xl md:my-10 lg:my-28">
                 <BackgroundColor bg="" color="" />
                 <h2>{intro[0]?.heading}<span className="capace-oranges">.</span></h2>

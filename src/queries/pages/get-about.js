@@ -1,16 +1,5 @@
 
 export const AboutPage =`
-        aboutIntro {
-            headingOne
-            excerpt
-            text
-            subHeading {
-                section {
-                heading
-                text
-                }
-            }
-        }
         aboutTeam {
             heading
             excerpt

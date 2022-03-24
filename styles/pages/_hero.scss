@@ -13,35 +13,50 @@
         }
         .overlay{
             position: absolute;
-            height: 100%;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
+            height: 100%;
             
-                div{
-                    h1{
-                        .start-heading1{
-                            font-family: 'Poppins', sans-serif;
-                            font-size: 100px;
-                            text-transform: uppercase;
-                        }
-        
-                        .start-heading2{
-                            font-family: 'Poppins', sans-serif;
-                            margin-top: 35px;
-                            font-size: 25px ;
-                            padding-left: 3px;
-                            text-transform: lowercase;
-        
-                                .type-writer{
-                                    color: $oranges;
-                                    margin-left: 2px;
-                                        span{
-                                            font-family: 'Caveat', cursive;
-                                            margin-left: 3px;
-                                            font-size: 35px;
-                                        }
-                                }
+                .hero-content{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    .hero-logo{
+                        position: absolute;
+                        left: 15px;
+                        top: 33px;
+                    }
+                    .hero-text{
+                        position: absolute;
+                        right: 33px;
+                        bottom: 10px;
+                        h1{
+                            .start-heading1{
+                                font-family: 'Poppins', sans-serif;
+                                font-size: 100px;
+                                line-height: 0;
+                                text-transform: uppercase;
+                            }
+            
+                            .start-heading2{
+                                font-family: 'Poppins', sans-serif;
+                                margin-top: 35px;
+                                font-size: 25px ;
+                                padding-left: 3px;
+                                text-transform: lowercase;
+            
+                                    .type-writer{
+                                        color: $oranges;
+                                        margin-left: 2px;
+                                            span{
+                                                font-family: 'Caveat', cursive;
+                                                margin-left: 3px;
+                                                font-size: 35px;
+                                            }
+                                    }
+                            }
                         }
                     }
                 }
@@ -53,10 +68,17 @@
 
             .overlay{
 
-                    div{
+                    .hero-content{
+
+                        .hero-logo{
+    
+                        }
+                        .hero-text{
+
                             h1{
                                 .start-heading1{
                                     font-size: 200px;
+                                    line-height: 0;
                                 }
                 
                                 .start-heading2{
@@ -72,6 +94,7 @@
                                         }
                                 }
                             }
+                        }
                     }
             }
     }
@@ -81,27 +104,35 @@
     .hero{
 
         .overlay{
+            .hero-content{
 
-                div{
-                        h1{
-                            .start-heading1{
-                                font-size: 400px;
-                            }
-            
-                            .start-heading2{
-                                font-size: 120px;
+                .hero-logo{
+
+                }
+                .hero-text{
+
+                    h1{
+                        .start-heading1{
+                            font-size: 400px;
+                            line-height: 12rem;
+                        }
+        
+                        .start-heading2{
+                            font-size: 120px;
                                 margin-top: 0;
                                 padding-left: 20px;
-            
-                                    .type-writer{
-                                        padding-left: 10px;
-                                            span{
-                                                font-size: 150px;
-                                            }
-                                    }
-                            }
+        
+                                .type-writer{
+                                    padding-left: 10px;
+                                        span{
+                                            font-size: 150px;
+                                        }
+                                }
                         }
+                    }
                 }
+            }
+
         }
     }
 }

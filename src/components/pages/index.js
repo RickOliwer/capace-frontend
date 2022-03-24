@@ -1,4 +1,4 @@
-import CasePage from "./case";
+
 import About from "./about";
 import ContactPage from "./contact";
 import ServicePage from "./services";
@@ -16,9 +16,6 @@ const Pages = ({template, catergories}) => {
                 <ServicePage servicePage={template?.servicesIntro} />
             ) : null}
 
-            {template?.pageTemplate == 'Case' ? (
-                <CasePage casePage={template} tax={catergories} />
-            ) : null}
 
             {template?.pageTemplate == 'Contact' ? (
                 <ContactPage contactPage={template} />

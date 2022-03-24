@@ -3,7 +3,7 @@ import Card from '../../modules/card';
 const AboutTeam = ({ team }) => {
 
     return ( 
-        <div className="my-6 md:my-10 lg:my-28">
+        <div className="my-6 md:my-10 lg:my-28 contain">
             <div className="text-5xl lg:text-7xl">
             <BackgroundColor bg="#191919" color="white" />
                 <h2>{team[0]?.heading} <span className="capace-oranges">.</span></h2>
