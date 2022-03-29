@@ -7,7 +7,9 @@ import { BackgroundColor } from "../functions/bg";
 import Form from "./form";
 
 
-const Intro = ( { content, title } ) => {
+const Intro = ( { content, title, ort } ) => {
+
+
 
     if(isEmpty(content)){
         return null
@@ -18,7 +20,7 @@ const Intro = ( { content, title } ) => {
             {content?.installningar == "bild" ? (
                 <SettingImg content={content} title={title} />
             ) : content?.installningar == "text_grid" ? (
-                <SettingGrid content={content} title={title} />
+                <SettingGrid content={content} title={title} ort={ort} />
             ) : (
                 <SettingEmpty content={content} title={title}/>
             )}
@@ -72,6 +74,7 @@ export const SettingImg = ({content, title}) => {
                     )}
                 </div>
             </div>
+            <BackgroundColor bg="" color="" />
             {content.fieldGroupName == 'GqlService_GqlFlexibleContent_Sektion_Intro' && (
                 <div className="my-28">
 
@@ -82,7 +85,7 @@ export const SettingImg = ({content, title}) => {
     )
 }
 
-export const SettingGrid = ({content, title}) => {
+export const SettingGrid = ({content, title, ort}) => {
     const [isGrid, setGrid] = useState(false)
     const gridLength = content?.textGrid?.length
     useEffect(() => {
@@ -92,14 +95,14 @@ export const SettingGrid = ({content, title}) => {
     }, [content?.textGrid, setGrid])
     return (
         <>
-        <div className={`layout-top intro-block ${isGrid ? 'grid grid-cols-3 gap-10' : ''}`}>
+        <div className={`layout-top intro-block ${isGrid ? 'grid md:grid-cols-3 gap-10 grid-cols-1' : ''}`}>
         <div className={`pr-10`}>
-            <h2 className="flex flex-col pb-10">
+            <h2 className="flex flex-col">
                 {!isEmpty(content?.rubrik1) && (
-                    <span className="mb-2 text-2xl lg:text-5xl">{content?.rubrik1}</span>
+                    <span className="text-2xl md:mb-2 lg:text-4xl">{content?.rubrik1}</span>
                 )}
                 {!isEmpty(content?.rubrik2) && (
-                    <span className="mb-2 text-2xl lg:text-5xl">{content?.rubrik2}</span>
+                    <span className="text-2xl md:mb-2 lg:text-4xl">{content?.rubrik2}</span>
                 )}
                 {!isEmpty(content?.rubrik3) && (
                     <span className="text-4xl lg:text-6xl caveat capace-oranges">{content?.rubrik3}.</span>
@@ -113,14 +116,25 @@ export const SettingGrid = ({content, title}) => {
         {!isEmpty(content?.textGrid) && (
                     
                 
-            <div className={`grid col-span-2 gap-10 intro-grid ${gridLength === 2 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+            <div className={`${gridLength <= 2 ? 'min-items' : 'max-items'}`}>
                 {content?.textGrid?.map((grid, index) => {
+                    let ortText
+                    if(grid?.text?.includes("%ort%") && ort !== undefined){
+                        ortText = grid?.text?.replace("%ort%", `i ${ort?.ort}`)
+                    }else if (grid?.text?.includes("%ort%") && ort === undefined){
+                        ortText = grid?.text?.replace("%ort%", "")
+                    } else {
+                        ortText = grid?.text
+                    }
                     return (
                         <div className="grid-item" key={`#€"%%${index}${grid?.text}`}>
-                            {!isEmpty(grid?.rubrik) && (
+                            {/* {!isEmpty(grid?.rubrik) && (
                                 <h3>{grid?.rubrik}</h3>
-                            )}
-                            {handleParse(grid?.text)}
+                            )} */}
+                            <div className="intro-grids">
+
+                                {handleParse(ortText)}
+                            </div>
                         </div>
                     )
                 })}
@@ -129,12 +143,14 @@ export const SettingGrid = ({content, title}) => {
         )}
 
     </div>
+    <BackgroundColor bg="" color="" />
     {content.fieldGroupName == 'GqlService_GqlFlexibleContent_Sektion_Intro' && (
         <div className="my-28">
 
             <Form title={title} />
         </div>
     )}
+    
     </>
     )
 }
@@ -162,7 +178,9 @@ export const SettingEmpty = ({content, title}) => {
                 {!isEmpty(content?.utdrag) && (
                     handleParse(content?.utdrag)
                 )}
+
             </div>
+            <BackgroundColor bg="" color="" />
             {content.fieldGroupName == 'GqlService_GqlFlexibleContent_Sektion_Intro' && (
                 <div className="my-28">
 

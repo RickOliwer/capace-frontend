@@ -72,6 +72,21 @@ body{
         margin-bottom: 10px;
     }
 }
+
+.intro-grids{
+    .parsed{
+        h1, h2, h3, h4, h5{
+            font-size: 1.15rem;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            
+                // &::after{
+                //     content: '.';
+                //     color: #FF752E;
+                // }
+        }
+    }
+}
 ul.flex-list{
     li{
         list-style: disc !important;
@@ -191,6 +206,9 @@ p, span, a{
         margin-top: 80px;
     }
 
+    &:nth-child(even){
+        margin-top: 80px;
+    }
     .team-card-img{
         transition: ease-in-out .3s;
         
@@ -206,6 +224,14 @@ p, span, a{
                     background-color: $overlay;
                 }
             }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .team-card{
+        &:nth-child(even){
+            margin-top: 0px;
+        }
     }
 }
 

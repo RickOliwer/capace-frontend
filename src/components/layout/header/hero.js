@@ -3,12 +3,14 @@ import isEmpty from "lodash.isempty"
 import RCTypeWriting from '../../typewriting';
 import Link from 'next/link';
 import { BackgroundColor } from '../../Blocks/functions/bg';
+import { useRouter } from 'next/router';
 
 
-const Hero = ({ hero, logo }) => {
+const Hero = ({ hero, logo, googleTitle }) => {
+    const router = useRouter()
     return (             
     
-    <div className="hero">
+    <div className={`hero ${hero?.uri == '/' ? '' : 'not-start'}`}>
 
  
         { isEmpty(hero?.featuredImage?.node?.mediaItemUrl) ? (
@@ -16,7 +18,7 @@ const Hero = ({ hero, logo }) => {
         ) : 
         ( 
             <div 
-            className="relative block w-screen h-screen"
+            className="relative block w-full h-full"
             >
                 <Image 
                 layout="fill" 
@@ -51,18 +53,19 @@ const Hero = ({ hero, logo }) => {
                     </div>
 
                     <div className="hero-text">
-                                {hero?.uri == '/' ? (
 
-                                <h1 className="font-semibold text-white">
-                                        <div className='start-heading1'>hey<span className='capace-oranges'>.</span></div>
-                                        <div className='start-heading2'>let&apos;s talk<span className='type-writer'><RCTypeWriting /></span></div>
-                                        </h1>
+                        {hero?.uri == '/' ? (
 
-                                ) : (
-                                    <h1 className="text-3xl font-semibold text-white pb-7 lg:text-8xl">
-                                    <div>{hero?.title}<span className='text-capace-oranges'>.</span></div>
-                                    </h1>
-                                )}
+                        <h1 className="font-semibold text-white">
+                                <div className='start-heading1'>hey<span className='capace-oranges'>.</span></div>
+                                <div className='start-heading2'>let&apos;s talk<span className='type-writer'><RCTypeWriting /></span></div>
+                                </h1>
+
+                        ) : (
+                            <h1 className="text-2xl font-semibold text-white lowercase pb-7 lg:text-7xl">
+                                <div>{hero?.title}<span className='text-capace-oranges'>.</span></div>
+                            </h1>
+                        )}
 
                     {/* //Site title & taglines */}
                     </div>

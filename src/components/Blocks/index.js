@@ -7,11 +7,11 @@ import Kundcase from "./sections/Kundcase";
 import Kunder from "./sections/Kunder";
 import Sidmarkering from "./sections/Sidmarkering";
 
-const Blocks = ( { block, pageTitle, catergories } ) => {
+const Blocks = ( { block, pageTitle, catergories, ort } ) => {
     return (
         <main className="layout">
             {block?.sektion?.map((block, index) => {
-                return <Block key={`block${index}`} section={block} title={pageTitle} tax={catergories}/>
+                return <Block key={`block${index}`} section={block} title={pageTitle} tax={catergories} ort={ort} />
             })}
         </main>
     );
@@ -19,7 +19,7 @@ const Blocks = ( { block, pageTitle, catergories } ) => {
  
 export default Blocks;
 
-export const Block = ( { section, title, tax } ) => {
+export const Block = ( { section, title, tax, ort } ) => {
     switch (section.fieldGroupName) {
         case "GQLCareer_GqlFlexiblecareer_Sektion_Intro":
             return <Intro content={section} />
@@ -28,7 +28,7 @@ export const Block = ( { section, title, tax } ) => {
             return <HeadingText content={section} />
             break;
         case "GqlService_GqlFlexibleContent_Sektion_Intro":
-            return <Intro content={section} title={title} />
+            return <Intro content={section} title={title} ort={ort} />
             break;
         case "GqlService_GqlFlexibleContent_Sektion_Blurbs":
             return <Blurb content={section} />

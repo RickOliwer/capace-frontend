@@ -5,8 +5,7 @@ import { GET_GOOGLE_ADS } from "../../src/queries/google-ads/get-googleads";
 import { GET_SERVICE_BY_URI } from "../../src/queries/posts/services/get-service";
 import { FALLBACK } from "../../src/utils/slugs";
 
-const GoogleOrt = ({data, orter, ort}) => {
-
+const SeoOrt = ({data, orter, ort}) => {
     return (
         <>
             <Hero hero={data?.singleService} logo={data?.header?.siteLogoUrl} googleTitle={orter?.data?.google?.orter?.listaPaOrter} />
@@ -14,58 +13,55 @@ const GoogleOrt = ({data, orter, ort}) => {
         </>
     );
 }
-
 export async function getStaticProps({params}){
     let {data: originData} = await Client.query({
-         query: GET_SERVICE_BY_URI,
-         variables: {
-             uri: '/google-ads'
-         }
+        query: GET_SERVICE_BY_URI,
+        variables: {
+            uri: '/seo'
+        }
     })
-    
+
     const orter = await Client.query({
         query: GET_GOOGLE_ADS,
     })
+
     const ort = orter?.data?.google?.orter?.listaPaOrter.find(ort => ort.slug === params.slug)
 
     let data = {
         ...originData,
         singleService: {
             ...originData.singleService,
-            title: `Google ads ${ort?.ort}`,
+            title: `seo ${ort?.ort}`,
             seo: {
                 //...originData.singleService.seo,
-                title: `Google ads i ${ort?.ort}`
+                title: `Seo i ${ort?.ort}`
                 
             },
         }
     }
-    return {
+    
+    return{
         props: {
             data: data || {},
             orter,
             ort
-        }, 
+        },
         revalidate: 30,
     }
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths(){
     const { data } = await Client.query({
         query: GET_GOOGLE_ADS,
     })
 
-
-    const pathsData = [];
-
+    const pathsData = []
     data?.google?.orter?.listaPaOrter && data?.google?.orter?.listaPaOrter?.map( page => {
         pathsData.push( {params: { slug: page.slug }})
     })
-
     return {
         paths: pathsData,
         fallback: FALLBACK
     }
 }
- 
-export default GoogleOrt;
+export default SeoOrt;

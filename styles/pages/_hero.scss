@@ -30,7 +30,7 @@
                     }
                     .hero-text{
                         position: absolute;
-                        right: 33px;
+                        right: 43px;
                         bottom: 10px;
                         h1{
                             .start-heading1{
@@ -61,6 +61,10 @@
                     }
                 }
         }
+}
+
+.not-start{
+    height: 65vh;
 }
 
 @media screen and (min-width: 768px){

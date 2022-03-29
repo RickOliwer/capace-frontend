@@ -32,7 +32,7 @@ const Form = ({title}) => {
 
 
     return (
-        <div className="contain">
+        <div className="contain mb-[300px]">
         <h3 className="text-2xl">Vill du veta mer om <span className="text-capace-oranges">{title}?</span></h3>
         <p>Fyll formuläret nedan så kontaktar vi dig.</p>
         
@@ -50,10 +50,10 @@ const Form = ({title}) => {
                 })}  />
             <div className="grid grid-cols-2 gap-3">
 
-                <div>
-                    <label htmlFor="name">Namn</label>
+                <div className="col-span-2 md:col-span-1">
                     <input 
-                    className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
+                    className="block w-full px-4 py-3 my-3 h-[50px] border-capace-dark border-b-[1px] placeholder-capace-dark focus:ring-capace-oranges focus:border-b-transparent focus:outline-none focus:ring-2"
+                    placeholder="Namn"
                     type="text"
                     {...register("name", {
                         required: {
@@ -80,9 +80,9 @@ const Form = ({title}) => {
                     
                     
                 </div>
-                <div>
-                    <label htmlFor="email">E-mail</label>
-                    <input className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
+                <div className="col-span-2 md:col-span-1">
+                    <input className="block w-full px-4 py-3 h-[50px] my-3 border-capace-dark border-b-[1px] placeholder-capace-dark focus:ring-capace-oranges focus:border-b-transparent focus:outline-none focus:ring-2"
+                    placeholder="E-mail"
                     type="email"
                     {...register("email", {
                         required: {
@@ -104,8 +104,8 @@ const Form = ({title}) => {
                     ) : null}
                 </div>
                 <div className="col-span-2">
-                    <label htmlFor="phone">Telefon</label>
-                    <input className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
+                    <input className="block w-full px-4 h-[50px] py-3 my-3 border-capace-dark border-b-[1px] placeholder-capace-dark focus:ring-capace-oranges focus:border-b-transparent focus:outline-none focus:ring-2"
+                    placeholder="Telefon"
                     {...register("phone", {
                         minLength: {
                             value: 10,
@@ -130,8 +130,8 @@ const Form = ({title}) => {
             </div>
             <div className="grid gap-4">
                 <div>
-                    <label htmlFor="message">Lämna ett valfritt meddelande</label>
-                    <textarea className="block w-full px-4 py-3 my-3 placeholder-gray-500 shadow focus:ring-capace-oranges focus:border-capace-oranges focus:outline-none focus:ring-2"
+                    <textarea className="block w-full px-4 py-3 my-3 h-[50px] border-capace-dark border-b-[1px] placeholder-capace-dark focus:ring-capace-oranges focus:border-b-transparent focus:outline-none focus:ring-2"
+                    placeholder="Lämna ett valfritt meddelande"
                     {...register("message", {
                         required: {
                             value: true,
@@ -154,7 +154,7 @@ const Form = ({title}) => {
                     ) : null}
                 </div>
 
-                <input type="submit" name="submit" value="skicka" className="uppercase capace-button" />
+                <button type="submit" name="submit" className="uppercase border-2 min-w-[103px] max-w-[133px] flex justify-center items-center text-center border-capace-oranges text-capace-oranges py-2 text-[14px] font-bold rounded-[20px] px-10 hover:bg-capace-oranges hover:text-capace-light transition ease-in-out duration-700">skicka</button>
             </div>
         </form>
     </div> 

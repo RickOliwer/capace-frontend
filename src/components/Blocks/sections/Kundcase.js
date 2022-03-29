@@ -3,15 +3,10 @@ import { useState } from "react";
 
 const Kundcase = ({content, taxMenu}) => {
     const myProjects = []
-
-    console.log('content ====>', content);
     content?.projekt?.map((q)=>{
             myProjects.push(q)
 
     })
-
-    
-
     const [menuItem, setMenuItem] = useState(myProjects)
     const [button, setButton] = useState(taxMenu)
     const [activeFilter, setActiveFilter] = useState('')

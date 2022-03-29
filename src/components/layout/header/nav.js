@@ -82,7 +82,7 @@ const Nav = ({ header, headerMenus }) => {
     return ( 
         <div className='fixed z-40 contain'>
 
-            <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg absolute z-40 w-16 h-14 md:right-6 xl:right-0 md:top-6 right-2 top-2 transition duration-1000 ease-in-out button-center`}>
+            <nav className={`${ isMenuScroll ? 'bg-capace h-14' : ''} rounded-lg absolute z-40 w-16 h-14 md:right-[35px] 2xl:right-0 md:top-[24px] right-2 top-4 transition duration-1000 ease-in-out button-center`}>
 
                     <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'click' : '' } nav_button`} id="nav_button">
                         <span className="line"></span>
