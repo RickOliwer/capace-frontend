@@ -1,7 +1,7 @@
 import isEmpty from "lodash.isempty";
-import Image from "next/image";
 import Link from "next/link";
 import { BackgroundColor } from "../functions/bg";
+import HandleImage from "../functions/handleImage";
 
 const Cases = ({content}) => {
 
@@ -26,12 +26,11 @@ const Cases = ({content}) => {
                                     <a>
                                         <div className="relative mb-6 h-90vh team-card-img">
                                             <div className="overlay"></div>
-                                            <Image
-                                                layout="fill"
-                                                objectFit='cover'
-                                                src={item?.featuredImage?.node?.mediaItemUrl}
-                                                alt={item?.featuredImage?.node?.altText}
-                                                priority
+                                            <HandleImage 
+                                                imgLayout="fill"
+                                                imgObjectFit='cover'
+                                                imgAlt={item?.featuredImage?.node?.altText}
+                                                imgSrc={item?.featuredImage?.node?.mediaItemUrl}
                                             />
 
                                         </div>

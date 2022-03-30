@@ -1,11 +1,11 @@
 import isEmpty from "lodash.isempty";
-import Image from "next/image";
 import handleParse from "../../../utils/parser";
 import { BackgroundColor } from "../functions/bg";
+import HandleImage from "../functions/handleImage";
 
 const Blurb = ( { content } ) => {
     const blurbLenght = content?.blurb?.length
-    
+    console.log('content?.blurb? ====>', content?.blurb);
     if(isEmpty(content?.blurb)){
         return null
     }
@@ -15,17 +15,14 @@ const Blurb = ( { content } ) => {
                 return (
                     <div key={item?.rubrik + item?.text}>
                         <BackgroundColor bg="" color="" />
-                        {!isEmpty(item?.ikon?.mediaItemUrl) && (
                             <div className="relative flex justify-center w-20 h-20 m-auto mb-4">
-                                <Image 
-                                    layout="fill"
-                                    objectFit="contain"
-                                    src={item?.ikon?.mediaItemUrl}
-                                    alt={item?.ikon?.altText}
-                                    priority
+                                <HandleImage 
+                                    imgLayout="fill"
+                                    imgObjectFit='contain'
+                                    imgAlt={item?.ikon?.altText}
+                                    imgSrc={item?.ikon?.mediaItemUrl}
                                 />
                             </div>
-                        )}
                         <div>
                             <h2 className="text-2xl text-center">{item?.rubrik}</h2>
                             <div className="text-center">

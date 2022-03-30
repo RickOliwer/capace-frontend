@@ -1,6 +1,6 @@
 import isEmpty from "lodash.isempty";
-import Image from "next/image";
 import { BackgroundColor } from "../functions/bg";
+import HandleImage from "../functions/handleImage";
 
 const Kunder = ({content}) => {
 
@@ -13,13 +13,11 @@ const Kunder = ({content}) => {
                     content?.logotyper?.map((logos) => {
                         return (
                             <div key={logos?.logo?.id} className="relative w-40 h-40 m-auto">
-                                <Image 
-                                    src={logos?.logo?.mediaItemUrl}
-                                    alt={logos?.logo?.altText}
-                                    layout="fill"
-                                    className=""
-                                    objectFit="contain"
-                                    priority
+                                <HandleImage
+                                    imgLayout="fill"
+                                    imgObjectFit='contain'
+                                    imgAlt={logos?.logo?.altText}
+                                    imgSrc={logos?.logo?.mediaItemUrl}
                                 />
                             </div>
                         )

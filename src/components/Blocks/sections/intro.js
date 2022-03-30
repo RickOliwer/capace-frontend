@@ -1,9 +1,9 @@
 import isEmpty from "lodash.isempty";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import handleParse from "../../../utils/parser";
 import { BackgroundColor } from "../functions/bg";
+import HandleImage from "../functions/handleImage";
 import Form from "./form";
 
 
@@ -61,17 +61,15 @@ export const SettingImg = ({content, title}) => {
                     <BackgroundColor bg="" color="" />
                 </div>
                 <div className="col-span-2 lg:col-span-3">
-                    {!isEmpty(content?.bild?.mediaItemUrl) && (
-                        <div className="relative w-full lg:w-full lg:h-full h-50vh">
-                        <Image 
-                            layout="fill"
-                            objectFit='cover'
-                            alt={content?.bild?.altText}
-                            src={content?.bild?.mediaItemUrl}
+                    <div className="relative w-full lg:w-full lg:h-full h-50vh">
+                        <HandleImage 
+                            imgLayout="fill"
+                            imgObjectFit='cover'
+                            imgAlt={content?.bild?.altText}
+                            imgSrc={content?.bild?.mediaItemUrl}
                             priority
                         />
                     </div>
-                    )}
                 </div>
             </div>
             <BackgroundColor bg="" color="" />

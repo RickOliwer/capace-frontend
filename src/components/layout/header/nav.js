@@ -58,7 +58,8 @@ const Nav = ({ header, headerMenus }) => {
     useEffect(() => {
         links.current.map((l, index) => {
         if(isDropped){
-              l.style.animation = `LinksActive 0.5s ease forwards ${index / 7 + .2}s`
+              //l.style.animation = `LinksActive 0.5s ease forwards ${index / 7 + .2}s`
+              l.style.animation = `LinksActive 0.5s ease forwards .2s`
            
          } else{
              l.style.animation = ""

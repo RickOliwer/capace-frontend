@@ -1,11 +1,14 @@
 import Blurb from "./sections/blurb";
 import CardInfo from "./sections/cardInfo";
 import Cases from "./sections/cases";
+import GoogleReviews from "./sections/GoogleReviews";
 import HeadingText from "./sections/headingText";
 import Intro from "./sections/intro";
+import Karriar from "./sections/Karriar";
 import Kundcase from "./sections/Kundcase";
 import Kunder from "./sections/Kunder";
 import Sidmarkering from "./sections/Sidmarkering";
+import Team from "./sections/Team";
 
 const Blocks = ( { block, pageTitle, catergories, ort } ) => {
     return (
@@ -53,6 +56,15 @@ export const Block = ( { section, title, tax, ort } ) => {
             break;
         case "Page_GqlFlexibleContent_Sektion_Kundcase":
             return <Kundcase content={section} taxMenu={tax} />
+            break;
+        case "Page_GqlFlexibleContent_Sektion_Team":
+            return <Team content={section} />
+            break;
+        case "Page_GqlFlexibleContent_Sektion_Karriar":
+            return <Karriar content={section} />
+            break;
+        case "Page_GqlFlexibleContent_Sektion_GoogleReviews":
+            return <GoogleReviews content={section} />
             break;
         default:
             return  <div>{section.fieldGroupName}</div>;

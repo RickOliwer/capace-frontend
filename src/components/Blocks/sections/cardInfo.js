@@ -1,7 +1,7 @@
 import isEmpty from "lodash.isempty";
-import Image from "next/image";
 import handleParse from "../../../utils/parser";
 import { BackgroundColor } from "../functions/bg";
+import HandleImage from "../functions/handleImage";
 
 const CardInfo = ({ content }) => {
     const cardLenght = content?.kort?.length
@@ -16,12 +16,11 @@ const CardInfo = ({ content }) => {
                         {!isEmpty(item?.bild?.mediaItemUrl) && (
                             <div className="relative w-full h-50vh">
                                 <BackgroundColor bg="#191919" color="white" />
-                                <Image 
-                                    layout="fill"
-                                    objectFit="cover"
-                                    src={item?.bild?.mediaItemUrl}
-                                    alt={item?.bild?.altText || item?.rubrik}
-                                    priority
+                                <HandleImage
+                                    imgLayout="fill"
+                                    imgObjectFit='cover'
+                                    imgSrc={item?.bild?.mediaItemUrl}
+                                    imgAlt={item?.bild?.altText || item?.rubrik}
                                 />
                             </div>
                         )}

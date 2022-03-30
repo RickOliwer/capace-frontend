@@ -56,6 +56,60 @@ export const GET_PAGE = gql`
 						}
 					  }
 				}
+				... on Page_GqlFlexibleContent_Sektion_GoogleReviews {
+					fieldGroupName
+					rubrik1
+					rubrik2
+					text
+					andvandGoogleApi
+					omdomen{
+					  omdome
+					}
+				  }
+				... on Page_GqlFlexibleContent_Sektion_Karriar {
+					fieldGroupName
+					rubrik
+					text
+					ledigaJobb {
+						... on GQLCareer {
+						id
+						title
+						uri
+						slug
+						featuredImage {
+						  node {
+							  mediaItemUrl
+							  title
+							  altText
+						  }
+						}
+					  }
+					}
+				  }
+				... on Page_GqlFlexibleContent_Sektion_Team{
+					fieldGroupName
+					rubrik
+					text
+					anstallda {
+						... on GQLEmployee {
+							id
+							uri
+							slug
+							GQL_employeesContent {
+								employeeIntro {
+									role
+									namn
+									email
+									image {
+										altText
+										mediaItemUrl
+									}
+								}
+							}
+						}
+					
+					}
+				}
 			  ... on Page_GqlFlexibleContent_Sektion_Intro {
 				fieldGroupName
 				rubrik1

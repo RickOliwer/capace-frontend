@@ -9,20 +9,21 @@ const Kundcase = ({content, taxMenu}) => {
     })
     const [menuItem, setMenuItem] = useState(myProjects)
     const [button, setButton] = useState(taxMenu)
-    const [activeFilter, setActiveFilter] = useState('')
+    const [activeFilter, setActiveFilter] = useState('allt')
 
 
-
+    console.log('what is active ===>', activeFilter);
     return (
         <div className="contain">
-            <div className="p-40 ">
-                <ul className="flex justify-between">
+            <div className="md:p-40 ">
+                <ul className="flex flex-col justify-between space-y-2 md:space-y-0 md:flex-row">
                     {
                         button?.map((t) => {
+                            
                             return <li 
                                     onClick={() => setActiveFilter(t.node.name)} 
                                     key={t?.node?.id} 
-                                    className={`${activeFilter ? '': ''} cursor-pointer text-4xl font-bold`}
+                                    className={` cursor-pointer md:text-4xl text-3xl hover:text-capace-dark hover:underline transition ease-in-out duration-700 hover:decoration-4 hover:decoration-capace-oranges hover:underline-offset-4 font-bold ${activeFilter === t.node.name ? 'text-capace-dark underline decoration-capace-oranges underline-offset-4 decoration-4': 'text-[#999]'}`}
                                     >
                                         {t?.node?.name}
                                     
