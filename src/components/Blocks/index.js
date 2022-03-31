@@ -66,6 +66,9 @@ export const Block = ( { section, title, tax, ort } ) => {
         case "Page_GqlFlexibleContent_Sektion_GoogleReviews":
             return <GoogleReviews content={section} />
             break;
+        case "Page_GqlFlexibleContent_Sektion_Blurbs":
+            return <Blurb content={section} />
+            break;
         default:
             return  <div>{section.fieldGroupName}</div>;
             break;

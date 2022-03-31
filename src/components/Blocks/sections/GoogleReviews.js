@@ -1,4 +1,5 @@
 import handleParse from "../../../utils/parser";
+import { Quotes } from "../../icons";
 import { BackgroundColor } from "../functions/bg";
 
 const GoogleReviews = ({content}) => {
@@ -16,7 +17,16 @@ const GoogleReviews = ({content}) => {
 
                 <div className="grid gap-10 lg:grid-cols-2">
                     {content?.omdomen?.map((review) => {
-                        console.log('google ===>', review);
+                        return (
+                            <div key={review?.omdome}>
+                                <div className="relative">
+                                {handleParse(review?.omdome)}
+                                <Quotes className="absolute -left-[49px] scale-50 rotate-180 -top-[56px] -z-10" />
+                                <Quotes className="absolute -bottom-[119px] scale-50 -z-10 -right-[38px] rotate-180" />
+
+                                </div>
+                            </div>
+                        )
                     })}
 
                 </div>

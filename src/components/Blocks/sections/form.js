@@ -32,7 +32,7 @@ const Form = ({title}) => {
 
 
     return (
-        <div className="contain mb-[300px]">
+        <div className="contain mb-[100px]">
         <h3 className="text-2xl">Vill du veta mer om <span className="text-capace-oranges">{title}?</span></h3>
         <p>Fyll formuläret nedan så kontaktar vi dig.</p>
         

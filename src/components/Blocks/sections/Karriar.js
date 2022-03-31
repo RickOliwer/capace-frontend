@@ -11,7 +11,6 @@ const Karriar = ({content}) => {
             </div>
             <div className="gap-10 mt-10 lg:grid lg:grid-cols-3">
                 {content?.ledigaJobb?.map((job) => {
-                    console.log('my jobs ==>', job);
                     return (
                         <Link href={job?.uri} key={job?.id}>
                             <a>

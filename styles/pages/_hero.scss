@@ -28,6 +28,26 @@
                         left: 15px;
                         top: 33px;
                     }
+                    .social-media{
+                        position: absolute;
+                        bottom: 29px;
+                        left: 18px;
+                        
+
+                            .media-items{
+
+                                    svg{
+                                        transform: scale(.7);
+                                        transition: ease-in-out .4s;
+                                        &:hover{
+                                            transform: scale(.9);
+                                        }
+                                        path{
+
+                                        }
+                                    }
+                            }
+                    }
                     .hero-text{
                         position: absolute;
                         right: 43px;
@@ -77,6 +97,23 @@
                         .hero-logo{
     
                         }
+
+                        .social-media{
+                            position: absolute;
+                            bottom: 42px;
+                            left: 24px;
+                            
+
+                                .media-items{
+                                        svg{
+
+                                            path{
+
+                                            }
+                                        }
+                                }
+                        }
+
                         .hero-text{
 
                             h1{
@@ -112,6 +149,22 @@
 
                 .hero-logo{
 
+                }
+
+                .social-media{
+                    position: absolute;
+                    bottom: 78px;
+                    left: 24px;
+                    
+
+                        .media-items{
+                                svg{
+
+                                    path{
+
+                                    }
+                                }
+                        }
                 }
                 .hero-text{
 

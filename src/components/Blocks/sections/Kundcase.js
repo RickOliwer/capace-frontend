@@ -11,8 +11,6 @@ const Kundcase = ({content, taxMenu}) => {
     const [button, setButton] = useState(taxMenu)
     const [activeFilter, setActiveFilter] = useState('allt')
 
-
-    console.log('what is active ===>', activeFilter);
     return (
         <div className="contain">
             <div className="md:p-40 ">

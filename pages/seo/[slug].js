@@ -25,6 +25,15 @@ export async function getStaticProps({params}){
         query: GET_GOOGLE_ADS,
     })
 
+
+    if(!orter?.data?.google?.orter?.listaPaOrter.find(ort => ort.slug === params.slug)){
+        return {
+            notFound: true
+        }
+    } 
+    
+   
+
     const ort = orter?.data?.google?.orter?.listaPaOrter.find(ort => ort.slug === params.slug)
 
     let data = {
@@ -39,6 +48,8 @@ export async function getStaticProps({params}){
             },
         }
     }
+    //console.log('data ==>', orter?.data?.google?.orter?.listaPaOrter);
+
     
     return{
         props: {

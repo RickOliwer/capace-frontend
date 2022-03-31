@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const HandleImage = ({ imgSrc, imgLayout, imgObjectFit, imgAlt, priority }) => {
   if (!imgSrc) {
-    return <div className='w-full h-full bg-capace'></div>;
+    return null;
   } else {
     return (
       <Image

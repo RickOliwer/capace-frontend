@@ -1,8 +1,6 @@
 import { gql } from "@apollo/client";
 import {HeaderFooter} from "../get-menus";
-import { AboutPage } from "./get-about";
 import SeoFragment from "../fragments/seo";
-import { ContactPage } from "./get-contact";
 import { ServicesPage } from "./get-service";
 
 
@@ -21,8 +19,6 @@ export const GET_PAGE = gql`
 		}
 		pageContent {
 			pageTemplate
-			${AboutPage}
-			${ContactPage}
 			${ServicesPage}
 		}
 		GQL_Flexible_Content {
@@ -176,6 +172,9 @@ export const GET_PAGE = gql`
 			  }
 			  ... on Page_GqlFlexibleContent_Sektion_Blurbs {
 				fieldGroupName
+				rubrik1
+				rubrik2
+				rubrik3
 				blurb {
 				  ikon {
 					altText

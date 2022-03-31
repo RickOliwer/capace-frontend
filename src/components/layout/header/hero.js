@@ -2,8 +2,9 @@ import Image from 'next/image'
 import isEmpty from "lodash.isempty"
 import RCTypeWriting from '../../typewriting';
 import Link from 'next/link';
-import { BackgroundColor } from '../../Blocks/functions/bg';
 import { useRouter } from 'next/router';
+import HandleImage from '../../Blocks/functions/handleImage';
+import { Facebook, Instagram, Linkedin } from '../../icons';
 
 
 const Hero = ({ hero, logo, googleTitle }) => {
@@ -11,23 +12,23 @@ const Hero = ({ hero, logo, googleTitle }) => {
     return (             
     
     <div className={`hero ${hero?.uri == '/' ? '' : 'not-start'}`}>
+        {!hero?.featuredImage?.node?.mediaItemUrl ? (
+            <div className='w-full h-full bg-capace-dark'></div>
+        ) : (
 
- 
-        { isEmpty(hero?.featuredImage?.node?.mediaItemUrl) ? (
-            <div className='w-full h-full bg-capace'></div>
-        ) : 
-        ( 
             <div 
             className="relative block w-full h-full"
             >
-                <Image 
-                layout="fill" 
-                objectFit="cover" 
-                alt={hero?.featuredImage?.node?.altText}
-                src={hero?.featuredImage?.node?.mediaItemUrl} 
-                priority />
+                <HandleImage 
+                    imgLayout="fill"
+                    imgObjectFit='cover'
+                    imgAlt={hero?.featuredImage?.node?.altText}
+                    imgSrc={hero?.featuredImage?.node?.mediaItemUrl}
+                    priority
+                />
             </div>
-         ) }
+        )}
+         
 
             <div className="z-10 overlay contain">
                 <div className='hero-content'>
@@ -50,6 +51,18 @@ const Hero = ({ hero, logo, googleTitle }) => {
                                 </a>
                             </Link>
                         ) : null}
+                    </div>
+
+                    <div className='flex flex-col items-center justify-center space-y-4 social-media'>
+                        <a className='media-items' href="https://www.facebook.com/capacemedia/">
+                            <Facebook />
+                        </a>
+                        <a className='media-items' href="https://www.instagram.com/capace_media/?hl=sv">
+                            <Instagram />
+                        </a>
+                        <a className='media-items' href="https://www.linkedin.com">
+                            <Linkedin />
+                        </a>
                     </div>
 
                     <div className="hero-text">
