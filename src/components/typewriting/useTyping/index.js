@@ -9,7 +9,11 @@ export const Phase = {
 const TYPING_INTERVAL = 150
 const PAUSE_MS = 1000
 const DELETING_INTERVAL = 50
-
+/**
+ * logic for typewriting 
+ * @param {*} texts 
+ * @returns typed
+ */
 export const useTyping = (texts) => {
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [phase, setPhase] = useState(Phase.Typing)

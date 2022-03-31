@@ -31,7 +31,7 @@ export async function getStaticProps({params}){
         return {
             notFound: true
         }
-    } 
+    }
     const ort = orter?.data?.google?.orter?.listaPaOrter.find(ort => ort.slug === params.slug)
 
     let data = {

@@ -9,7 +9,14 @@ export const isCustomPageUri = (uri) => {
     ]
     return pagesToExclude.includes(uri)
 }
-
+/**
+ * handle if data is empty. if empty send to 404 page with notFound: true
+ * @param {*} defaultProps 
+ * @param {*} data 
+ * @param {*} errors 
+ * @param {*} field 
+ * @returns object
+ */
 export const handleRedirectsAndReturnData = (defaultProps, data, errors, field) => {
     if (isEmpty(data)) {
         return {

@@ -22,6 +22,11 @@ const Blocks = ( { block, pageTitle, catergories, ort } ) => {
  
 export default Blocks;
 
+/**
+ * returns components that matches the fieldGropName for acf/flexible content
+ * @param {*} param0 
+ * @returns string
+ */
 export const Block = ( { section, title, tax, ort } ) => {
     switch (section.fieldGroupName) {
         case "GQLCareer_GqlFlexiblecareer_Sektion_Intro":

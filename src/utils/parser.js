@@ -1,6 +1,11 @@
 import parse from 'html-react-parser'
 import isEmpty from 'lodash.isempty';
 
+/**
+ * Handle wysiwyg fields from acf-pro
+ * @param {*} content 
+ * @returns string
+ */
 export default function handleParse (content) {
     
     return (
@@ -12,6 +17,7 @@ export default function handleParse (content) {
                     }
                 }
             }
-        })}</div>
+        })}
+        </div>
     )
 }

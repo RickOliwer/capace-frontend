@@ -1,5 +1,10 @@
 import Image from 'next/image';
 
+/**
+ * handle next/image component, if user did not add image in back end return null
+ * @param {*} param0 
+ * @returns string
+ */
 const HandleImage = ({ imgSrc, imgLayout, imgObjectFit, imgAlt, priority }) => {
   if (!imgSrc) {
     return null;
