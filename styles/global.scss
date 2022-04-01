@@ -72,6 +72,32 @@ body, html{
         margin-bottom: 10px;
     }
 }
+.blurb-parse{
+    .parsed{
+        h2{
+            font-size: 3.65rem;
+            margin-bottom: 12px !important;
+            margin-top: 0px !important;
+        }
+    }
+}
+
+.page-mark{
+    .parsed{
+        h2, h3, h4{
+            font-size: 1.25rem;
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .page-mark{
+        .parsed{
+            h2, h3, h4{
+                font-size: 3rem;
+            }
+        }
+    }
+}
 
 .intro-grids{
     .parsed{
@@ -79,11 +105,6 @@ body, html{
             font-size: 1.15rem;
             margin-top: 0px;
             margin-bottom: 10px;
-            
-                // &::after{
-                //     content: '.';
-                //     color: #FF752E;
-                // }
         }
     }
 }

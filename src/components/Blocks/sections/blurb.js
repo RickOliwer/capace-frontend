@@ -47,7 +47,7 @@ const Blurb = ( { content } ) => {
                             ) : null}
                             <div>
                                 <h2 className="text-2xl text-center">{item?.rubrik}</h2>
-                                <div className="">
+                                <div className="blurb-parse">
                                     {handleParse(item?.text)}
                                 </div>
                                 <BackgroundColor bg="" color="" />

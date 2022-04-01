@@ -159,7 +159,6 @@ export const GET_PAGE = gql`
 				fieldGroupName
 				rubrik
 				text
-				taggar
 				knapp {
 					text
 					url {
