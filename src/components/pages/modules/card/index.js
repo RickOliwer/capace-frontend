@@ -43,7 +43,7 @@ const Card = ({link, imgAlt, imgSrc, first, serv, second, third}) => {
                         <Link href={link}>
                             <a>
                                 <div className="relative h-screen mb-6">
-                                    
+                                    <div className="oranges-overlay"></div>
                                     <HandleImage 
                                         imgLayout="fill"
                                         imgObjectFit='cover'

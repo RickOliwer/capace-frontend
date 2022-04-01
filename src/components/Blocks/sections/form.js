@@ -6,8 +6,10 @@ import isEmpty from "lodash.isempty";
 const Form = ({title}) => {
     const {register, handleSubmit, reset, formState: { errors }} = useForm()
     const [isSubmitted, setSubmitted] = useState(false)
+    const [isLoading, setLoading] = useState(false)
 
     async function onSubmitForm(values){
+        setLoading(true)
         let config = {
             method: 'post',
             url: `${process.env.NEXT_PUBLIC_API_URL}`,
@@ -20,6 +22,8 @@ const Form = ({title}) => {
         try {
             const response = await axios(config);
             if(response.status == 200){
+                console.log('message sent');
+                setLoading(false)
                 setSubmitted(true)
                 reset()
                 
@@ -38,7 +42,7 @@ const Form = ({title}) => {
         
         <form onSubmit={handleSubmit(onSubmitForm)} className="grid gap-3 my-10">
             {isSubmitted && isEmpty(errors) ? (
-                <div className="w-full px-6 py-4 my-4 text-xl opacity-50 bg-capace-oranges text-capace-light">Meddelande har skickats</div>
+                <div className="w-full px-6 py-4 my-4 text-xl opacity-50 bg-capace-oranges text-capace-light">Tack för ditt Meddelande!</div>
             ) : null}
             <input 
                 type="text" 
@@ -48,7 +52,7 @@ const Form = ({title}) => {
                 {...register("service", {
                     required: "Required",
                 })}  />
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-5">
 
                 <div className="col-span-2 md:col-span-1">
                     <input 
@@ -154,7 +158,10 @@ const Form = ({title}) => {
                     ) : null}
                 </div>
 
-                <button type="submit" name="submit" className="uppercase border-2 min-w-[103px] max-w-[133px] flex justify-center items-center text-center border-capace-oranges text-capace-oranges py-2 text-[14px] font-bold rounded-[20px] px-10 hover:bg-capace-oranges hover:text-capace-light transition ease-in-out duration-700">skicka</button>
+                <button type="submit" name="submit" className="uppercase border-2 min-w-[103px] max-w-[133px] flex justify-center items-center text-center border-capace-oranges text-capace-oranges py-2 text-[14px] font-bold rounded-[20px] px-10 hover:bg-capace-oranges hover:text-capace-light transition ease-in-out duration-700">
+                {isLoading && <span>Skickar...</span>}
+                {!isLoading && <span>Skicka</span>}
+                </button>
             </div>
         </form>
     </div> 

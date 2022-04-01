@@ -1,20 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-//import nodemailer from 'nodemailer'
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const Mail = async (req, res) => {
   const {service, name, email, phone, message} = req.body;
-
-  // const transporter = nodemailer.createTransport({
-  //   host: 'smtp.gmail.com',
-  //   port: '465',
-  //   secure: true,
-  //   auth: {
-  //     user: process.env.user,
-  //     pass: process.env.pass,
-  //   },
-  // })
-
 
   try {
     const emailRes = await sgMail.send({
@@ -28,10 +15,17 @@ const Mail = async (req, res) => {
       <p><strong>Meddelande: </strong> ${message} </p>
       `,
     })
+    if (emailRes[0].statusCode === 202) {
+      console.log('MAIL SUCCESS', req.body);
+      res.status(200).json(req.body);
+    } else {
+      console.log('MAIL ERROR => Something went wrong while sending email');
+      res.status(400).json({ success: false });
+    }
   } catch (error) {
     console.log(error);
+    res.status(500).json({ success: false });
   }
-  res.status(200).json(req.body)
 }
 
 export default Mail

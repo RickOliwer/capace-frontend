@@ -17,5 +17,5 @@
 }
 
 .oranges-overlay{
-    @apply absolute top-0 left-0 z-10 w-full h-full transition ease-in-out duration-500 hover:bg-[#ff742e68];
+    @apply absolute top-0 left-0 z-10 w-full h-full transition ease-in-out duration-500 hover:bg-[#ff742ea0];
 }

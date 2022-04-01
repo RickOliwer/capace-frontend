@@ -1,5 +1,6 @@
 import isEmpty from "lodash.isempty";
 import Image from "next/image";
+import HandleImage from "../../../Blocks/functions/handleImage";
 
 const SecondSection = ( { secondSection } ) => {
     return ( 
@@ -9,23 +10,20 @@ const SecondSection = ( { secondSection } ) => {
 
             <div className="grid gap-10 md:grid-cols-2">
 
-                {!isEmpty(secondSection?.slutresultat[0]?.slutresultatImg) ? (
+                {
                     secondSection?.slutresultat[0]?.slutresultatImg?.map((img) => {
-                        return <Image
-                                key={img?.id} 
-                                layout="responsive"
-                                objectFit="contain"
-                                src={img?.mediaItemUrl}
-                                alt={img?.altText}
-                                priority
-                                width="100%" 
-                                height="100%" 
-                                className="img-shadow"
-                                
-                            />
-                       
+                        return (
+                            <div key={img?.id} className="relative flex items-center justify-center w-full lg:h-[400px] md:h-[320px] h-[300px] shadow-xl">
+                                <HandleImage 
+                                imgLayout="fill"
+                                imgObjectFit='contain'
+                                imgAlt={img?.altText}
+                                imgSrc={img?.mediaItemUrl}
+                                />
+                            </div>
+                        )
                     })
-                ) : null}
+                }
             </div>
         </section>
     );

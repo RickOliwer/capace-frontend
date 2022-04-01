@@ -5,7 +5,7 @@ import Image from 'next/image';
  * @param {*} param0 
  * @returns string
  */
-const HandleImage = ({ imgSrc, imgLayout, imgObjectFit, imgAlt, priority }) => {
+const HandleImage = ({ imgSrc, imgLayout, imgObjectFit, imgAlt, imgWidth, imgHeight, priority }) => {
   if (!imgSrc) {
     return null;
   } else {
@@ -14,6 +14,8 @@ const HandleImage = ({ imgSrc, imgLayout, imgObjectFit, imgAlt, priority }) => {
         src={imgSrc}
         layout={imgLayout}
         objectFit={imgObjectFit}
+        width={imgWidth}
+        height={imgHeight}
         alt={imgAlt}
         priority={priority ? true : false}
       />
