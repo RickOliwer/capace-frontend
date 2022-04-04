@@ -30,9 +30,12 @@ const InstaFeeds = ({token, ...props}) => {
     return (
         <div className='contain layout-top'>
             <h2>INSTAGRAM.</h2>
-            {feeds.map((feed) => (
-                <Feed key={feed.id} feed={feed} />
-            ))}
+            <div className='insta-container'>
+
+                {feeds.map((feed) => (
+                    <Feed key={feed.id} feed={feed} />
+                ))}
+            </div>
         </div>
     );
 }
