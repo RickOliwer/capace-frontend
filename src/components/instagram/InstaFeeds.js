@@ -17,6 +17,7 @@ const InstaFeeds = ({token, ...props}) => {
             axios
                 .get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp.current}`)
                 .then((resp) => {
+                    console.log('the response ===>', resp);
                     setFeedsData(resp.data.data)
                 })
           } catch (err) {
