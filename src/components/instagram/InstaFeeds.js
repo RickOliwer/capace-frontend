@@ -2,46 +2,52 @@ import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import Feed from './Feed'
 const InstaFeeds = ({token, ...props}) => {
-    const [feeds, setFeedsData] = useState([])
+    const [feeds, setFeedsData] = useState([]);
     //use useRef to store the latest value of the prop without firing the effect
     const tokenProp = useRef(token);
     tokenProp.current = token;
-    
-    console.log('the token ===>', tokenProp.current);
+
     useEffect(() => {
         // this is to avoid memory leaks
         const abortController = new AbortController();
-
+        console.log('URL ===>', `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp.current}`);
         async function fetchInstagramPost () {
           try{
             axios
                 .get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp.current}`)
                 .then((resp) => {
-                    console.log('the response ===>', resp);
-                    setFeedsData(resp.data.data)
+                    setFeedsData(resp.data)
                 })
           } catch (err) {
               console.log('error', err)
           }
         }
-        
+
         // manually call the fecth function 
         fetchInstagramPost();
-  
+        console.log('FEEDS AFTER TRY CATCH ===>', feeds);
         return () => {
             // cancel pending fetch request on component unmount
             abortController.abort(); 
         };
     }, [props.limit])
 
-    console.log('INSTAFEEDS PAGE FEED ====>', feeds);
     return (
         <div className="container">
-            {feeds.map((feed) => (
-                <Feed key={feed.id} feed={feed} />
-            ))}
+            {feeds.map((feed) => {
+                console.log('feed component ===>', feed)
+                return (
+                    <Feed key={feed.id} feed={feed} />
+                )
+            })}
         </div>
     );
 }
- 
+
 export default InstaFeeds;
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
