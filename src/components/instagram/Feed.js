@@ -1,5 +1,6 @@
 import React from 'react'
 const Feed = (props) => {
+    console.log('FEED PAGE props ===>', props);
     const { id, caption, media_type, media_url} = props.feed
     let post;
 
@@ -37,7 +38,7 @@ const Feed = (props) => {
                 />
             );
     }       
-
+    console.log('FEED PAGE post ===>', post);
     return (
         <React.Fragment>
             {post}

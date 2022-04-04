@@ -32,6 +32,7 @@ const InstaFeeds = ({token, ...props}) => {
         };
     }, [props.limit])
 
+    console.log('INSTAFEEDS PAGE FEED ====>', feeds);
     return (
         <div className="container">
             {feeds.map((feed) => (
