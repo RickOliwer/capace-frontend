@@ -1,7 +1,7 @@
 
 import Client from '../src/apollo/client';
 import Blocks from '../src/components/Blocks';
-import InstaFeeds from '../src/components/instaFeeds';
+import InstaFeeds from '../src/components/instagram/InstaFeeds';
 import Hero from '../src/components/layout/header/hero';
 import { GET_PAGE } from '../src/queries/pages/get-page';
 import { handleRedirectsAndReturnData } from '../src/utils/slugs';
