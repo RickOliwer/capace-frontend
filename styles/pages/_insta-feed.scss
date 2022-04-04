@@ -1,14 +1,13 @@
 .container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 15px;
 
         img{
             width: 100%;
             height: auto;
             display: block;
-            transition: all 100ms ease-out;
+            transition: all 300ms ease-out;
 
                 &:hover{
                     transform: scale(1.04);
