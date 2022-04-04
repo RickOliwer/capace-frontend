@@ -6,6 +6,7 @@ const InstaFeeds = ({token, ...props}) => {
     //use useRef to store the latest value of the prop without firing the effect
     const tokenProp = useRef(token);
     tokenProp.current = token;
+    console.log('the token ====>', token);
 
     useEffect(() => {
         // this is to avoid memory leaks
