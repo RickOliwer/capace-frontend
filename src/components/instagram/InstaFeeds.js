@@ -45,9 +45,4 @@ const InstaFeeds = ({token, ...props}) => {
 }
 
 export default InstaFeeds;
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
+
