@@ -12,15 +12,23 @@ const InstaFeeds = ({token, ...props}) => {
         const abortController = new AbortController();
         console.log('URL ===>', `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp.current}`);
         async function fetchInstagramPost () {
-          try{
-            axios
-                .get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp.current}`)
-                .then((resp) => {
-                    setFeedsData(resp.data)
+            let config = {
+                method: 'get',
+                url: `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp.current}`,
+                responseType: 'stream'
+            }
+            try{
+                // axios
+                //     .get(`https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp.current}`)
+                //     .then((resp) => {
+                //         setFeedsData(resp.data)
+                //     })
+                await axios(config).then(function (response) {
+                    console.log('my response ===>',response);
                 })
-          } catch (err) {
-              console.log('error', err)
-          }
+            } catch (err) {
+                console.log('error', err)
+            }
         }
 
         // manually call the fecth function 
