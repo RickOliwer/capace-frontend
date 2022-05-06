@@ -17,19 +17,20 @@ export default function Home({ data, instagram }) {
       <Hero hero={data?.page} logo={data?.header?.siteLogoUrl} />
 
       <Blocks block={data?.page?.GQL_Flexible_Content} pageTitle={data?.page?.title}/>
-      <div className='m-auto layout contain layout-top'>
+      <div className='px-6 overflow-hidden md:px-10 lg:px-28 2xl:px-0 contain layout-top'>
         <div className='mb-7'>
           <h2 className="text-5xl uppercase lg:text-7xl">instagram<span className="text-capace-oranges">.</span></h2>
           <a className='hover:text-capace-oranges' rel="noreferrer" target="_blank" href="https://www.instagram.com/capace_media/?hl=sv">@capace_media</a>
 
         </div>
-        <div className='container'>
+        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
           {instagram?.data?.map((feed) => {
             if(feed?.media_type === "VIDEO"){
               return (
 
+                <div key={feed?.id}>
 
-                  <video key={feed?.id}
+                  <video 
                     width='100%'
                     height='auto' 
                     src={feed?.media_url} 
@@ -37,6 +38,7 @@ export default function Home({ data, instagram }) {
                     controls playsinline>
                     
                   </video>
+                </div>
 
               )
             }else if(feed?.media_type === "CAROUSEL_ALBUM"){
